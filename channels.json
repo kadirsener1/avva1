@@ -1,1 +1,141 @@
-[]
+{
+  "updated_at": "2026-05-02T21:03:46.012968",
+  "channels": [
+    {
+      "id": "1",
+      "name": "beIN SPORTS 1 HD"
+    },
+    {
+      "id": "2",
+      "name": "beIN SPORTS 2 HD"
+    },
+    {
+      "id": "3",
+      "name": "beIN SPORTS 3 HD"
+    },
+    {
+      "id": "4",
+      "name": "beIN SPORTS 4 HD"
+    },
+    {
+      "id": "5",
+      "name": "beIN SPORTS 5 HD"
+    },
+    {
+      "id": "6",
+      "name": "beIN SPORTS HD MAX 1"
+    },
+    {
+      "id": "7",
+      "name": "beIN SPORTS HD MAX 2"
+    },
+    {
+      "id": "8",
+      "name": "EXXEN 1"
+    },
+    {
+      "id": "9",
+      "name": "EXXEN 2"
+    },
+    {
+      "id": "10",
+      "name": "EXXEN 3"
+    },
+    {
+      "id": "11",
+      "name": "EXXEN 4"
+    },
+    {
+      "id": "12",
+      "name": "EXXEN 5"
+    },
+    {
+      "id": "13",
+      "name": "S SPORT 1"
+    },
+    {
+      "id": "14",
+      "name": "S SPORT 2"
+    },
+    {
+      "id": "15",
+      "name": "S SPORT PLUS"
+    },
+    {
+      "id": "16",
+      "name": "SMART SPOR"
+    },
+    {
+      "id": "17",
+      "name": "SMART SPOR 2"
+    },
+    {
+      "id": "18",
+      "name": "TABİİ SPOR"
+    },
+    {
+      "id": "19",
+      "name": "TABİİ SPOR 1"
+    },
+    {
+      "id": "20",
+      "name": "TABİİ SPOR 2"
+    },
+    {
+      "id": "21",
+      "name": "TABİİ SPOR 3"
+    },
+    {
+      "id": "22",
+      "name": "TABİİ SPOR 4"
+    },
+    {
+      "id": "23",
+      "name": "TABİİ SPOR 5"
+    },
+    {
+      "id": "24",
+      "name": "TİVİBUSPOR"
+    },
+    {
+      "id": "25",
+      "name": "TİVİBUSPOR 2"
+    },
+    {
+      "id": "26",
+      "name": "TİVİBUSPOR 3"
+    },
+    {
+      "id": "27",
+      "name": "TİVİBUSPOR 4"
+    },
+    {
+      "id": "28",
+      "name": "TRT 1"
+    },
+    {
+      "id": "29",
+      "name": "TRT SPOR"
+    },
+    {
+      "id": "30",
+      "name": "TV 8"
+    },
+    {
+      "id": "31",
+      "name": "TV 8.5"
+    },
+    {
+      "id": "32",
+      "name": "A SPOR"
+    },
+    {
+      "id": "33",
+      "name": "A HABER"
+    },
+    {
+      "id": "34",
+      "name": "ATV"
+    }
+  ]
+}
