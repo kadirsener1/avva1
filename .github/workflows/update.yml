@@ -1,0 +1,34 @@
+name: Avva Sports Playlist Güncelle
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'     # Her 30 dakikada bir
+  workflow_dispatch:           # Manuel tetikleme için
+
+jobs:
+  update-playlist:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Python kurulumu
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Playwright ve bağımlılıkları kur
+        run: |
+          pip install -r requirements.txt
+          playwright install --with-deps chromium
+
+      - name: Scraper çalıştır
+        run: python scrape_avva.py
+
+      - name: Değişiklikleri commit et
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add channels.json playlist.m3u
+          git commit -m "Playlist otomatik güncellendi - $(date '+%Y-%m-%d %H:%M')" || echo "No changes to commit"
+          git push
