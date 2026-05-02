@@ -1,69 +1,82 @@
-import json
+import time
 import re
-from datetime import datetime
 from playwright.sync_api import sync_playwright
 
 def scrape_avva():
-    print(f"[{datetime.now()}] Scraping başlatılıyor (Network Sniffer Modu)...")
+    print("🚀 İşlem başlatıldı. Kanallar taranıyor...")
     
-    found_links = set() # Tekrar eden linkleri engellemek için
+    found_channels = []
 
     with sync_playwright() as p:
-        # Tarayıcıyı başlat
         browser = p.chromium.launch(headless=True)
+        # Gerçek bir kullanıcı gibi davranmak için User-Agent
         context = browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
         )
         page = context.new_page()
 
-        # AĞ TRAFİĞİNİ DİNLE: m3u8 içeren her isteği yakala
-        def handle_request(request):
-            url = request.url
-            if ".m3u8" in url and "avvaupdate.com" in url:
-                found_links.add(url)
-                print(f"Bulunan Link: {url}")
-
-        page.on("request", handle_request)
-
+        # 1. Ana sayfadaki kanal listesini al
         try:
-            # Ana sayfaya git
             page.goto("https://avvasportshd1.com/channels.html", wait_until="networkidle", timeout=60000)
-            
-            # Bazı siteler tıklama olmadan linkleri yüklemez, sayfada biraz bekle
-            page.wait_for_timeout(10000) 
-            
-            # Eğer hala link yoksa, sayfadaki butonları simüle etmek gerekebilir
-            # Ancak genellikle networkidle yeterlidir.
-            
+            # Sayfadaki tüm href linklerini topla
+            links = page.query_selector_all("a[href*='play.html?ch=']")
+            hrefs = [link.get_attribute("href") for link in links]
+            # Tekrar edenleri temizle
+            hrefs = list(set(hrefs))
+            print(f"📡 {len(hrefs)} adet kanal linki tespit edildi. İçerikler alınıyor...")
         except Exception as e:
-            print(f"Hata oluştu: {e}")
-        finally:
+            print(f"❌ Ana sayfa yüklenemedi: {e}")
             browser.close()
+            return
 
-    if not found_links:
-        print("❌ Hiç m3u8 linki bulunamadı. Site korumayı artırmış olabilir.")
-        return
+        # 2. Her kanal sayfasını tek tek gez ve m3u8 yakala
+        for href in hrefs:
+            # Tam URL'yi oluştur
+            target_url = f"https://avvasportshd1.com/{href}"
+            ch_name = href.split("ch=")[-1].upper()
+            
+            print(f"🔍 Taranıyor: {ch_name}...")
+            
+            current_m3u8 = None
 
-    # Kanalları işle ve kaydet
-    channels = []
-    for link in found_links:
-        # Linkten kanal adını tahmin et (Örn: ssport1)
-        name_match = re.search(r'com/([^/?]+)', link)
-        channel_id = name_match.group(1) if name_match else "Bilinmeyen"
-        
-        channels.append({
-            "name": channel_id.upper(),
-            "url": link
-        })
+            # Ağ trafiğini dinleyen fonksiyon
+            def intercept_m3u8(request):
+                nonlocal current_m3u8
+                if ".m3u8" in request.url and "avvaupdate" in request.url:
+                    current_m3u8 = request.url
 
-    # M3U Dosyası Oluştur
-    with open("playlist.m3u", "w", encoding="utf-8") as f:
-        f.write("#EXTM3U\n")
-        for ch in channels:
-            f.write(f'#EXTINF:-1,Avva | {ch["name"]}\n')
-            f.write(f'{ch["url"]}\n')
+            page.on("request", intercept_m3u8)
+            
+            try:
+                page.goto(target_url, wait_until="domcontentloaded", timeout=30000)
+                # m3u8'in yüklenmesi için kısa bir süre bekle (oynatıcı yüklenmeli)
+                time.sleep(5) 
+                
+                if current_m3u8:
+                    found_channels.append({"name": ch_name, "url": current_m3u8})
+                    print(f"✅ Bulundu: {ch_name}")
+                else:
+                    print(f"⚠️ Link bulunamadı: {ch_name}")
+                    
+            except Exception as e:
+                print(f"❌ {ch_name} taranırken hata: {e}")
+            
+            # Dinleyiciyi temizle
+            page.remove_listener("request", intercept_m3u8)
 
-    print(f"✅ Bitti! {len(channels)} kanal playlist.m3u dosyasına yazıldı.")
+        browser.close()
+
+    # 3. M3U Dosyasını Kaydet
+    if found_channels:
+        with open("playlist.m3u", "w", encoding="utf-8") as f:
+            f.write("#EXTM3U\n")
+            f.write(f"# Son Güncelleme: {time.ctime()}\n\n")
+            for ch in found_channels:
+                f.write(f'#EXTINF:-1,Avva | {ch["name"]}\n')
+                f.write(f'{ch["url"]}\n\n')
+        print(f"🎉 Bitti! playlist.m3u dosyasına {len(found_channels)} kanal eklendi.")
+    else:
+        print("😭 Hiçbir kanal linki toplanamadı.")
 
 if __name__ == "__main__":
     scrape_avva()
