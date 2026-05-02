@@ -1,4 +1,4 @@
-name: Avva Sports Playlist Güncelle
+name: Avva Sports Link Güncelle
 
 on:
   schedule:
@@ -6,14 +6,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  update-playlist:
+  update:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
 
     steps:
-      - name: Repo Checkout
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -23,16 +22,16 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Bağımlılıkları Kur
+      - name: Bağımlılık Kur
         run: pip install requests
 
-      - name: Playlist Güncelle
+      - name: Linkleri Güncelle
         run: python scrape_avva.py
 
       - name: Commit ve Push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add playlist.m3u channels.json
-          git diff --staged --quiet || git commit -m "✅ Playlist güncellendi - $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git add playlist.m3u
+          git diff --staged --quiet || git commit -m "🔄 Linkler güncellendi - $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push
