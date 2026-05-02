@@ -1,54 +1,37 @@
-name: Avva Sports Playlist Güncelle
+name: Kanal Listesi Güncelle
 
 on:
   schedule:
-    - cron: '*/30 * * * *'     # Her 30 dakikada bir
-  workflow_dispatch:           # Manuel tetikleme butonu
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
 
 jobs:
-  update-playlist:
+  update:
     runs-on: ubuntu-latest
-    
     permissions:
-      contents: write          # Repo'ya yazma izni
+      contents: write
 
     steps:
-      # 1. Repo'yu çek
-      - name: Repo'yu Klonla
+      - name: Repo checkout
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      # 2. Python kur
-      - name: Python 3.11 Kur
+      - name: Python kur
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
-      # 3. Pip cache (hızlandırır)
-      - name: Pip Cache
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-playwright
-          restore-keys: |
-            ${{ runner.os }}-pip-
-
-      # 4. Bağımlılıkları kur
-      - name: Playwright Kur
+      - name: Bağımlılıkları kur
         run: |
           pip install playwright
           playwright install --with-deps chromium
 
-      # 5. Scraper'ı çalıştır
-      - name: Playlist Güncelle
+      - name: Scraper çalıştır
         run: python scrape_avva.py
 
-      # 6. Değişiklikleri kaydet ve push et
-      - name: Git Commit ve Push
+      - name: Commit ve push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add channels.json playlist.m3u
-          git diff --staged --quiet || git commit -m "✅ Playlist Güncellendi - $(date '+%Y-%m-%d %H:%M UTC')"
+          git add channels.json
+          git diff --staged --quiet || git commit -m "Kanal listesi güncellendi - $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push
