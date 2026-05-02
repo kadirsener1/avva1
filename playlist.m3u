@@ -24,21 +24,6 @@ https://avvaupdate.com/beinhdmax1/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387
 #EXTINF:-1 tvg-id="7" tvg-logo="https://avvasportshd1.com/uploads/logos/1777559944_7e98e4acce869d0f86e4.png" group-title="Avva Sports",beIN SPORTS HD MAX 2
 https://avvaupdate.com/beinhdmax2/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
 
-#EXTINF:-1 tvg-id="8" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560002_5bd33b50a9ad89c8c380.png" group-title="Avva Sports",EXXEN 1
-https://avvaupdate.com/exxen1/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
-
-#EXTINF:-1 tvg-id="9" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560017_4d9f3df725b7b3ea25ad.png" group-title="Avva Sports",EXXEN 2
-https://avvaupdate.com/exxen2/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
-
-#EXTINF:-1 tvg-id="10" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560031_c09ccc9c782724982b6b.png" group-title="Avva Sports",EXXEN 3
-https://avvaupdate.com/exxen3/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
-
-#EXTINF:-1 tvg-id="11" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560045_e7c6abfe934091137d76.png" group-title="Avva Sports",EXXEN 4
-https://avvaupdate.com/exxen4/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
-
-#EXTINF:-1 tvg-id="12" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560060_2fc5771ade410ea2658e.png" group-title="Avva Sports",EXXEN 5
-https://avvaupdate.com/exxen5/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
-
 #EXTINF:-1 tvg-id="13" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560294_1a980cf1624b0a3ba28a.png" group-title="Avva Sports",S SPORT 1
 https://avvaupdate.com/ssport1/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
 
@@ -47,6 +32,18 @@ https://avvaupdate.com/ssport2/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b31
 
 #EXTINF:-1 tvg-id="15" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560336_feaa41fc9bd9fb3d5c4c.png" group-title="Avva Sports",S SPORT PLUS
 https://avvaupdate.com/ssportplus/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
+
+#EXTINF:-1 tvg-id="24" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560637_143925d3aa62a00bf7a1.png" group-title="Avva Sports",TİVİBUSPOR
+https://avvaupdate.com/tivibuspor/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
+
+#EXTINF:-1 tvg-id="25" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560651_088be25604a8dbacea76.png" group-title="Avva Sports",TİVİBUSPOR 2
+https://avvaupdate.com/tivibuspor2/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
+
+#EXTINF:-1 tvg-id="26" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560665_e9c0a11ecc9198477135.png" group-title="Avva Sports",TİVİBUSPOR 3
+https://avvaupdate.com/tivibuspor3/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
+
+#EXTINF:-1 tvg-id="27" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560681_86f00db94128767ed08e.png" group-title="Avva Sports",TİVİBUSPOR 4
+https://avvaupdate.com/tivibuspor4/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
 
 #EXTINF:-1 tvg-id="16" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560373_907498ad1b3c0a3e2309.png" group-title="Avva Sports",SMART SPOR
 https://avvaupdate.com/smartsport1/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
@@ -72,17 +69,20 @@ https://avvaupdate.com/tabiispor4/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387
 #EXTINF:-1 tvg-id="23" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560520_387804be766f5bac463b.png" group-title="Avva Sports",TABİİ SPOR 5
 https://avvaupdate.com/tabiispor5/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
 
-#EXTINF:-1 tvg-id="24" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560637_143925d3aa62a00bf7a1.png" group-title="Avva Sports",TİVİBUSPOR
-https://avvaupdate.com/tivibuspor/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
+#EXTINF:-1 tvg-id="8" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560002_5bd33b50a9ad89c8c380.png" group-title="Avva Sports",EXXEN 1
+https://avvaupdate.com/exxen1/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
 
-#EXTINF:-1 tvg-id="25" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560651_088be25604a8dbacea76.png" group-title="Avva Sports",TİVİBUSPOR 2
-https://avvaupdate.com/tivibuspor2/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
+#EXTINF:-1 tvg-id="9" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560017_4d9f3df725b7b3ea25ad.png" group-title="Avva Sports",EXXEN 2
+https://avvaupdate.com/exxen2/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
 
-#EXTINF:-1 tvg-id="26" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560665_e9c0a11ecc9198477135.png" group-title="Avva Sports",TİVİBUSPOR 3
-https://avvaupdate.com/tivibuspor3/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
+#EXTINF:-1 tvg-id="10" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560031_c09ccc9c782724982b6b.png" group-title="Avva Sports",EXXEN 3
+https://avvaupdate.com/exxen3/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
 
-#EXTINF:-1 tvg-id="27" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560681_86f00db94128767ed08e.png" group-title="Avva Sports",TİVİBUSPOR 4
-https://avvaupdate.com/tivibuspor4/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
+#EXTINF:-1 tvg-id="11" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560045_e7c6abfe934091137d76.png" group-title="Avva Sports",EXXEN 4
+https://avvaupdate.com/exxen4/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
+
+#EXTINF:-1 tvg-id="12" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560060_2fc5771ade410ea2658e.png" group-title="Avva Sports",EXXEN 5
+https://avvaupdate.com/exxen5/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
 
 #EXTINF:-1 tvg-id="28" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560710_af6b5d6bc6dc28e6b225.png" group-title="Avva Sports",TRT 1
 https://avvaupdate.com/trt1/index.m3u8?o=1&e=1777765220&tk=7f32ef878ec6387b3181550ff1c803c7
