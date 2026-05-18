@@ -76,19 +76,17 @@ def update_playlist(link_map):
             new_url = link_map.get(old_slug) or link_map.get(current_channel_name)
 
             if new_url:
-                # ----------------- REPLACEMENT İŞLEMİ -----------------
-                # o=1&e kısmını o=1%26e yapar
+                # 1. Önce karakter düzenlemelerini (URL encode) yapıyoruz
                 new_url = new_url.replace("o=1&e", "o=1%26e")
-                
-                # Linkin sonundaki veya ortasındaki sayısal ID'den sonra gelen & işaretini %26 yapar
-                # (Örn: ...1779142994&token... -> ...1779142994%26token...)
-                # Eğer genel olarak linkteki tüm kalan '&' karakterlerinin '%26' olması gerekiyorsa:
                 new_url = new_url.replace("&", "%26")
-                # -----------------------------------------------------
+                
+                # 2. Düzenlenmiş linkin başına belirtilen worker adresini ekliyoruz
+                prefix = "https://avva.magnitude.workers.dev/?url="
+                new_url = prefix + new_url
 
                 new_lines.append(new_url + "\n")
                 updated += 1
-                print(f"✅ Güncellendi ve Düzenlendi: {current_channel_name}")
+                print(f"✅ Güncellendi ve Öneklendi: {current_channel_name}")
             else:
                 # Eşleşme bulunamazsa eski linki koru
                 new_lines.append(line)
