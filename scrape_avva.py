@@ -10,6 +10,7 @@ from datetime import datetime
 # Kaynak M3U URL'leri (2. aşama için)
 SOURCE_URLS = [
     "https://raw.githubusercontent.com/kadirsener1/vavoos/refs/heads/main/app/output/playlist.m3u",
+    "https://raw.githubusercontent.com/kadirsener1/avva1/refs/heads/main/playlist.m3u",
     "https://raw.githubusercontent.com/kadirsener1/iptv-panel/refs/heads/main/tv247.m3u",
     "https://raw.githubusercontent.com/kadirsener1/tivim/refs/heads/main/m3u/hit.m3u",
     "https://raw.githubusercontent.com/kadirsener1/tivim/refs/heads/main/m3u/ulusal.m3u",
@@ -46,7 +47,7 @@ def get_fresh_links():
 
 
 def stage1_avva_add():
-    """Aşama 1: Avva API'den gelen tüm kanalları önce ekle"""
+    """Aşama 1: Avva API'den gelen tüm kanalları kategori ve logo ile ekle"""
     print("=" * 60)
     print("📡 AŞAMA 1: Avva API Kanallarını Ekleme")
     print("=" * 60)
@@ -57,7 +58,6 @@ def stage1_avva_add():
     channels = get_fresh_links()
     if not channels:
         print("⚠️ Avva API'den kanal alınamadı, bu aşama atlanıyor.\n")
-        # Dosyayı yine de başlat (boş header ile)
         with open(M3U_FILE, 'w', encoding='utf-8') as f:
             f.write('#EXTM3U\n')
         return 0
@@ -74,6 +74,25 @@ def stage1_avva_add():
             if not name or not url:
                 continue
 
+            # API'den kategori ve logo bilgilerini al
+            category = ch.get("category", "").strip()
+            logo = ch.get("logo", "").strip()
+
+            # Alternatif alan adları kontrol et
+            if not category:
+                category = ch.get("group", "").strip()
+            if not category:
+                category = ch.get("group_title", "").strip()
+            if not category:
+                category = "Avva Sports"
+
+            if not logo:
+                logo = ch.get("image", "").strip()
+            if not logo:
+                logo = ch.get("thumbnail", "").strip()
+            if not logo:
+                logo = ch.get("icon", "").strip()
+
             # URL düzenlemeleri
             processed_url = url.replace("o=1&e", "o=1%26e")
             processed_url = processed_url.replace("&", "%26")
@@ -82,10 +101,16 @@ def stage1_avva_add():
             prefix = "https://avva.magnitude.workers.dev/?url="
             processed_url = prefix + processed_url
 
-            f.write(f'#EXTINF:-1,{name}\n')
+            # EXTINF satırını kategori ve logo ile oluştur
+            extinf = f'#EXTINF:-1'
+            extinf += f' tvg-logo="{logo}"' if logo else ''
+            extinf += f' group-title="{category}"'
+            extinf += f',{name}'
+
+            f.write(extinf + '\n')
             f.write(processed_url + '\n')
             added += 1
-            print(f"  ✅ Eklendi: {name}")
+            print(f"  ✅ Eklendi: {name} | Kategori: {category} | Logo: {"Var" if logo else "Yok"}")
 
     if added:
         print(f"\n🎉 Aşama 1 tamamlandı! {added} avva kanalı eklendi.\n")
