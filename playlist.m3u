@@ -80,8 +80,7 @@ https://avvaupdate.com/tivibuspor3/index.m3u8?o=1&e=1779690583&tk=8aa7b277cc64c5
 #EXTINF:-1 tvg-logo="https://avvasportshd1.com/uploads/logos/1777560681_86f00db94128767ed08e.png" group-title="Spor",TİVİBUSPOR 4
 https://avvaupdate.com/tivibuspor4/index.m3u8?o=1&e=1779690583&tk=8aa7b277cc64c5e458df9a4ae8191713
 
-#EXTINF:-1 tvg-logo="https://avvasportshd1.com/uploads/logos/1777560801_2c4378c937808336db7d.png" group-title="Tr Spor",A SPOR
-https://avvaupdate.com/aspor/index.m3u8?o=1&e=1779690583&tk=8aa7b277cc64c5e458df9a4ae8191713
+
 
 #EXTINF:-1 group-title="Vavoo Spor" tvg-logo="https://raw.githubusercontent.com/kadirsener1/logolar/refs/heads/master/kanallogolari/beIN-SPORTS-1-HD.png" tvg-id="BeinSports1.tr",BEIN SPOTS1 SD
 https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv/play/143239535a2e3c23c1d16
@@ -168,6 +167,8 @@ https://tv-trtspor1.medya.trt.com.tr/master_1080.m3u8
 https://netspor.tecostream.xyz/bsh.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/CYTEuoR.png" group-title="TR Spor",A Spor
 https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/aspor/aspor_1080p.m3u8
+#EXTINF:-1 tvg-logo="https://avvasportshd1.com/uploads/logos/1777560801_2c4378c937808336db7d.png" group-title="TR Spor",A SPOR
+https://avvaupdate.com/aspor/index.m3u8?o=1&e=1779690583&tk=8aa7b277cc64c5e458df9a4ae8191713
 #EXTINF:-1 tvg-id="bein-sports-1-turkey" tvg-name="beIN Sports 1 Turkey" group-title="Spor",beIN Sports 1 Turkey
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2MiIsInRzIjoxNzc5NzM5OTY4MzAyfQ==
 #EXTINF:-1 tvg-id="bein-sports-2-turkey" tvg-name="beIN Sports 2 Turkey" group-title="Spor",beIN Sports 2 Turkey
