@@ -10,7 +10,6 @@ from datetime import datetime
 # Kaynak M3U URL'leri (2. aşama için)
 SOURCE_URLS = [
     "https://raw.githubusercontent.com/kadirsener1/vavoos/refs/heads/main/app/output/playlist.m3u",
-    "https://raw.githubusercontent.com/kadirsener1/avva1/refs/heads/main/playlist.m3u",
     "https://raw.githubusercontent.com/kadirsener1/iptv-panel/refs/heads/main/tv247.m3u",
     "https://raw.githubusercontent.com/kadirsener1/tivim/refs/heads/main/m3u/hit.m3u",
     "https://raw.githubusercontent.com/kadirsener1/tivim/refs/heads/main/m3u/ulusal.m3u",
