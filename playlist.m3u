@@ -53,7 +53,7 @@ https://avva.magnitude.workers.dev/?url=https://avvaupdate.com/exxen3/index.m3u8
 https://avva.magnitude.workers.dev/?url=https://avvaupdate.com/exxen4/index.m3u8?o=1%26e=1779749553%26tk=78e66e1e6aae65bf64b6685d1ff982de
 #EXTINF:-1 tvg-logo="https://avvasportshd1.com/uploads/logos/1777560060_2fc5771ade410ea2658e.png" group-title="Spor",EXXEN 5
 https://avva.magnitude.workers.dev/?url=https://avvaupdate.com/exxen5/index.m3u8?o=1%26e=1779749553%26tk=78e66e1e6aae65bf64b6685d1ff982de
-#EXTINF:-1 group-title="Vavoo Spor" tvg-logo="https://raw.githubusercontent.com/kadirsener1/logolar/refs/heads/master/kanallogolari/beIN-SPORTS-1-HD.png" tvg-id="BeinSports1.tr",BEIN SPOTS1 SDeneme
+#EXTINF:-1 group-title="Vavoo Spor" tvg-logo="https://raw.githubusercontent.com/kadirsener1/logolar/refs/heads/master/kanallogolari/beIN-SPORTS-1-HD.png" tvg-id="BeinSports1.tr",BEIN SPOTS1 SD
 https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv/play/143239535a2e3c23c1d16
 #EXTINF:-1 group-title="Vavoo Spor" tvg-logo="https://raw.githubusercontent.com/kadirsener1/logolar/refs/heads/master/kanallogolari/beIN-SPORTS-1-HD.png" tvg-id="BeinSports1.tr",BEIN 1 FEED (720P)
 https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv/play/1363827223a1c98515d612
@@ -197,5 +197,4 @@ https://saran-live.ercdn.net/babytv/index.m3u8
 https://tv-e-okul01.medya.trt.com.tr/master.m3u8
 #EXTINF:-1 tvg-id="137" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20210421003212.png" group-title="Çocuk",Cartoon Network
 http://65.108.239.207:80/cartoonnetwork/index.m3u8
-#EXTINF:-1 group-title="Vavoo Spor" tvg-logo="https://raw.githubusercontent.com/kadirsener1/logolar/refs/heads/master/kanallogolari/beIN-SPORTS-1-HD.png" tvg-id="BeinSports1.tr",BEIN SPOTS1 SD
-https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv/play/143239535a2e3c23c1d16
+
