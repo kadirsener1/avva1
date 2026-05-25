@@ -42,26 +42,54 @@ def get_fresh_links():
         channels = response.json()
     except Exception as e:
         print(f"❌ API hatası: {e}")
-        return None
+        return None, None
 
     # Kanal adı -> güncel link eşleştirmesi
-    # Hem tam isim hem de URL'deki slug ile eşleştir
     link_map = {}
-    for ch in channels:
-        name = ch.get("name", "").strip().upper()
-        url = ch.get("m3u8_url", "")
-        if name and url:
-            link_map[name] = url
+    # Kanal adı -> tüm bilgiler (kategori, logo, id)
+    info_map = {}
 
-            # URL'den slug çıkar (örn: avvaupdate.com/ssport1/index.m3u8 -> ssport1)
+    for ch in channels:
+        name = ch.get("name", "").strip()
+        name_upper = name.upper()
+        url = ch.get("m3u8_url", "")
+
+        # Kategori bilgisi
+        category = (ch.get("category", "") or ch.get("group", "") or
+                    ch.get("group_title", "") or "").strip()
+        if not category:
+            category = "Avva Sports"
+
+        # Logo bilgisi
+        logo = (ch.get("logo", "") or ch.get("image", "") or
+                ch.get("thumbnail", "") or ch.get("icon", "") or "").strip()
+
+        # ID bilgisi
+        tvg_id = (ch.get("id", "") or ch.get("tvg_id", "") or
+                  ch.get("channel_id", "") or "").strip()
+        if not tvg_id:
+            tvg_id = name
+
+        if name_upper and url:
+            link_map[name_upper] = url
+            info_map[name_upper] = {
+                "name": name,
+                "category": category,
+                "logo": logo,
+                "tvg_id": tvg_id
+            }
+
+            # URL'den slug çıkar
             slug_match = re.search(r'avvaupdate\.com/([^/]+)/', url)
             if slug_match:
-                link_map[slug_match.group(1).lower()] = url
+                slug = slug_match.group(1).lower()
+                link_map[slug] = url
+                info_map[slug] = info_map[name_upper]
 
-    return link_map
+    return link_map, info_map
 
 
-def update_playlist(link_map):
+def update_playlist(link_map, info_map):
     """Mevcut playlist.m3u dosyasındaki sadece linkleri güncelle"""
     try:
         with open(M3U_FILE, "r", encoding="utf-8") as f:
@@ -80,11 +108,41 @@ def update_playlist(link_map):
 
         # #EXTINF satırından kanal adını al
         if stripped.startswith("#EXTINF"):
-            # Son virgülden sonrası kanal adı
             comma_pos = stripped.rfind(",")
             if comma_pos != -1:
                 current_channel_name = stripped[comma_pos + 1:].strip().upper()
-            new_lines.append(line)
+
+            # EXTINF satırında kategori/logo/id yoksa API'den ekle
+            has_group = "group-title=" in stripped
+            has_logo = "tvg-logo=" in stripped
+            has_id = "tvg-id=" in stripped
+
+            # Slug ile veya isimle info bul
+            info = info_map.get(current_channel_name)
+            if not info:
+                # Bir sonraki satırdan slug dene
+                if i + 1 < len(lines):
+                    next_stripped = lines[i + 1].strip()
+                    slug_match = re.search(r'avvaupdate\.com/([^/]+)/', next_stripped)
+                    if slug_match:
+                        info = info_map.get(slug_match.group(1).lower())
+
+            if info and (not has_group or not has_logo or not has_id):
+                # EXTINF satırını yeniden oluştur
+                # Mevcut parametreleri koru, eksikleri ekle
+                extinf_params = stripped[:comma_pos] if comma_pos != -1 else stripped
+                channel_display = stripped[comma_pos + 1:].strip() if comma_pos != -1 else ""
+
+                if not has_id and info.get("tvg_id"):
+                    extinf_params = extinf_params.rstrip() + f' tvg-id="{info["tvg_id"]}"'
+                if not has_logo and info.get("logo"):
+                    extinf_params = extinf_params.rstrip() + f' tvg-logo="{info["logo"]}"'
+                if not has_group and info.get("category"):
+                    extinf_params = extinf_params.rstrip() + f' group-title="{info["category"]}"'
+
+                new_lines.append(f"{extinf_params},{channel_display}\n")
+            else:
+                new_lines.append(line)
 
         # m3u8 link satırı - bunu güncelle
         elif "avvaupdate.com" in stripped and ".m3u8" in stripped:
@@ -129,7 +187,7 @@ def update_playlist(link_map):
 
 
 def stage1_avva_update():
-    """Aşama 1: Avva API link güncelleme - 1. kod aynen"""
+    """Aşama 1: Avva API link güncelleme + kategori/logo/id ekleme"""
     print("=" * 60)
     print("📡 AŞAMA 1: Avva API Link Güncelleme")
     print("=" * 60)
@@ -137,8 +195,8 @@ def stage1_avva_update():
     now = datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')
     print(f"🚀 [{now}] Linkler güncelleniyor...\n")
 
-    # 1. API'den güncel linkleri al
-    link_map = get_fresh_links()
+    # 1. API'den güncel linkleri ve bilgileri al
+    link_map, info_map = get_fresh_links()
     if not link_map:
         print("⚠️ Avva API'den link alınamadı, bu aşama atlanıyor.\n")
         return
@@ -146,7 +204,7 @@ def stage1_avva_update():
     print(f"📡 API'den {len(link_map)} kanal linki alındı.\n")
 
     # 2. Mevcut playlist'teki linkleri güncelle
-    updated = update_playlist(link_map)
+    updated = update_playlist(link_map, info_map)
 
     if updated:
         print(f"\n🎉 Aşama 1 tamamlandı! {updated} kanal linki güncellendi.\n")
@@ -159,7 +217,7 @@ def stage1_avva_update():
 # ============================================================
 
 def m3u_parse(content):
-    """M3U içeriğini kanal listesine parse eder. Her kanal: isim, metadata (tüm # satırları), link"""
+    """M3U içeriğini kanal listesine parse eder."""
     channels = []
     current_meta = []
     for line in content.splitlines():
@@ -167,16 +225,12 @@ def m3u_parse(content):
         if not line:
             continue
         if line.startswith('#EXTINF'):
-            # Yeni kanal başlangıcı
             current_meta = [line]
         elif line.startswith('#'):
-            # Mevcut kanalın metadata satırı (EXTVLCOPT dahil)
             if current_meta:
                 current_meta.append(line)
         else:
-            # Yayın linki satırı
             if current_meta:
-                # Kanal adını EXTINF satırından al (virgülden sonraki kısım)
                 extinf_line = current_meta[0]
                 name_match = re.search(r',(.+)$', extinf_line)
                 channel_name = name_match.group(1).strip() if name_match else extinf_line.strip()
@@ -232,10 +286,10 @@ def main():
     print(f"📅 {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')}")
     print()
 
-    # Aşama 1: Avva API link güncelleme (1. kod aynen çalışır)
+    # Aşama 1: Avva API link güncelleme (1. kod + kategori/logo/id)
     stage1_avva_update()
 
-    # Aşama 2: M3U kaynaklarından tüm kanalları direkt ekle (kontrol yok)
+    # Aşama 2: M3U kaynaklarından tüm kanalları direkt ekle
     count2 = stage2_append_sources()
 
     print("=" * 60)
