@@ -1,0 +1,37 @@
+#EXTM3U
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/b/b2/SporSMART_HD_logo.png" group-title="Spor",beIN Sports 1-HİT
+https://api.hitnova.net/s/zirve/mono.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/b/b2/SporSMART_HD_logo.png" group-title="Spor",beIN Sports 2-HİT
+https://api.hitnova.net/s/b2/mono.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/b/b2/SporSMART_HD_logo.png" group-title="Spor",beIN Sports 3-HİT
+https://api.hitnova.net/s/b3/mono.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/b/b2/SporSMART_HD_logo.png" group-title="Spor",beIN Sports 4-HİT
+https://api.hitnova.net/s/b4/mono.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/b/b2/SporSMART_HD_logo.png" group-title="Spor",beIN Sports 5-HİT
+https://api.hitnova.net/s/b5/mono.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/b/b2/SporSMART_HD_logo.png" group-title="Spor",beIN Sports Max 1-HİT
+https://api.hitnova.net/s/bm1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/b/b2/SporSMART_HD_logo.png" group-title="Spor",beIN Sports Max2-HİT
+https://api.hitnova.net/s/bm2/mono.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/07/S_Sport_logo.png" group-title="Spor",S Sport 1-HİT
+https://api.hitnova.net/s/ss/mono.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/0/07/S_Sport_logo.png" group-title="Spor",S Sport 2-HİT
+https://api.hitnova.net/s/ss2/mono.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/d/db/TivibuSporLogo1.PNG" group-title="Spor",Tivibu Spor 1-HİT
+https://api.hitnova.net/s/t1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/d/db/TivibuSporLogo1.PNG" group-title="Spor",Tivibu Spor 2-HİT
+https://api.hitnova.net/s/t2/mono.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/d/db/TivibuSporLogo1.PNG" group-title="Spor",Tivibu Spor 3-HİT
+https://api.hitnova.net/s/t3/mono.m3u
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/d/db/TivibuSporLogo1.PNG" group-title="Spor",Tivibu Spor 4-HİT
+https://api.hitnova.net/s/t4/mono.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/b/b2/SporSMART_HD_logo.png" group-title="Spor",Smart Sport 1-HİT
+https://api.hitnova.net/s/smarts/mono.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/b/b2/SporSMART_HD_logo.png" group-title="Spor",Smart Sport 2-HİT
+https://api.hitnova.net/s/sms2/mono.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/e/e6/Eurosport_1_Logo_2015.png" group-title="Spor",Eurosport 1-HİT
+https://api.hitnova.net/s/eu1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/d0/Eurosport_2_Logo_2015.png" group-title="Spor",Eurosport 2-HİT
+https://api.hitnova.net/s/eu2/mono.m3u8
+
