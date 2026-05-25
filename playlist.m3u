@@ -61,9 +61,11 @@ https://avva.magnitude.workers.dev/?url=https://avvaupdate.com/trtspor/index.m3u
 https://avva.magnitude.workers.dev/?url=https://avvaupdate.com/tv8/index.m3u8?o=1%26e=1779685605%26tk=19486bc3c5569216443dbcf5dd4ed4fb
 #EXTINF:-1 tvg-id="31" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560770_46d37670472b5c8156fd.png" group-title="Avva Sports",TV 8.5
 https://api.hitnova.net/s/tv85/mono.m3u8
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/b/b2/SporSMART_HD_logo.png" group-title="Spor",beIN Sports Haber
+#EXTINF:-1 tvg-logo="https://i.imgur.com/VWygoj9.png" group-title="TR Spor",beIN Sports Haber
+https://tv-trtspor1.medya.trt.com.tr/master_1080.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/UGbdQLv.png" group-title="TR Spor",beIN Sports Haber
 https://netspor.tecostream.xyz/bsh.m3u8
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/b/b2/SporSMART_HD_logo.png" group-title="Spor",A Spor
+#EXTINF:-1 tvg-logo="https://i.imgur.com/CYTEuoR.png" group-title="TR Spor",A Spor
 https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/aspor/aspor_1080p.m3u8
 #EXTINF:-1 tvg-id="33" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560813_a1327f34eaf278d46cca.png" group-title="Avva Sports",A HABER
 https://avva.magnitude.workers.dev/?url=https://avvaupdate.com/ahaber/index.m3u8?o=1%26e=1779685605%26tk=19486bc3c5569216443dbcf5dd4ed4fb
