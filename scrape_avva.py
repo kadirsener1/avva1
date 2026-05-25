@@ -1,14 +1,13 @@
 import requests
 import re
 import os
-import json
 from datetime import datetime
 
 # ============================================================
 # AYARLAR
 # ============================================================
 
-# Kaynak M3U URL'leri (1. aşama için)
+# Kaynak M3U URL'leri (2. aşama için)
 SOURCE_URLS = [
     "https://raw.githubusercontent.com/kadirsener1/vavoos/refs/heads/main/app/output/playlist.m3u",
     "https://raw.githubusercontent.com/kadirsener1/avva1/refs/heads/main/playlist.m3u",
@@ -18,7 +17,7 @@ SOURCE_URLS = [
     "https://raw.githubusercontent.com/kadirsener1/tivim/refs/heads/main/m3u/cocuk.m3u",
 ]
 
-# Avva API ayarları (2. aşama için)
+# Avva API ayarları (1. aşama için)
 API_URL = "https://avvasportshd1.com/api/channels"
 
 API_HEADERS = {
@@ -32,11 +31,77 @@ M3U_FILE = "playlist.m3u"
 
 
 # ============================================================
-# AŞAMA 1: M3U KAYNAKLARINI BİRLEŞTİR / LİNK GÜNCELLE
+# AŞAMA 1: AVVA API'DEN TÜM KANALLARI ÖNCE EKLE
+# ============================================================
+
+def get_fresh_links():
+    """API'den güncel kanal listesini çek"""
+    try:
+        response = requests.get(API_URL, headers=API_HEADERS, timeout=30)
+        response.raise_for_status()
+        channels = response.json()
+    except Exception as e:
+        print(f"❌ API hatası: {e}")
+        return None
+    return channels
+
+
+def stage1_avva_add():
+    """Aşama 1: Avva API'den gelen tüm kanalları önce ekle"""
+    print("=" * 60)
+    print("📡 AŞAMA 1: Avva API Kanallarını Ekleme")
+    print("=" * 60)
+
+    now = datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')
+    print(f"🚀 [{now}] Avva kanalları çekiliyor...\n")
+
+    channels = get_fresh_links()
+    if not channels:
+        print("⚠️ Avva API'den kanal alınamadı, bu aşama atlanıyor.\n")
+        # Dosyayı yine de başlat (boş header ile)
+        with open(M3U_FILE, 'w', encoding='utf-8') as f:
+            f.write('#EXTM3U\n')
+        return 0
+
+    print(f"📡 API'den {len(channels)} kanal alındı.\n")
+
+    added = 0
+    with open(M3U_FILE, 'w', encoding='utf-8') as f:
+        f.write('#EXTM3U\n')
+        for ch in channels:
+            name = ch.get("name", "").strip()
+            url = ch.get("m3u8_url", "").strip()
+
+            if not name or not url:
+                continue
+
+            # URL düzenlemeleri
+            processed_url = url.replace("o=1&e", "o=1%26e")
+            processed_url = processed_url.replace("&", "%26")
+
+            # Worker prefix ekle
+            prefix = "https://avva.magnitude.workers.dev/?url="
+            processed_url = prefix + processed_url
+
+            f.write(f'#EXTINF:-1,{name}\n')
+            f.write(processed_url + '\n')
+            added += 1
+            print(f"  ✅ Eklendi: {name}")
+
+    if added:
+        print(f"\n🎉 Aşama 1 tamamlandı! {added} avva kanalı eklendi.\n")
+    else:
+        print("\n⚠️ Hiçbir avva kanalı eklenemedi.\n")
+
+    return added
+
+
+# ============================================================
+# AŞAMA 2: M3U KAYNAKLARINDAN TÜM KANALLARI EKLE
 # ============================================================
 
 def m3u_parse(content):
-    """M3U içeriğini kanal listesine parse eder. Her kanal: isim, metadata (tüm # satırları), link"""
+    """M3U içeriğini kanal listesine parse eder."""
     channels = []
     current_meta = []
     for line in content.splitlines():
@@ -62,22 +127,15 @@ def m3u_parse(content):
     return channels
 
 
-def stage1_merge_sources():
-    """Aşama 1: M3U kaynaklarını birleştir veya mevcut dosyadaki linkleri güncelle"""
+def stage2_add_all_sources():
+    """Aşama 2: Tüm M3U kaynaklarından tüm kanalları sona ekle"""
     print("=" * 60)
-    print("📋 AŞAMA 1: M3U Kaynakları Birleştirme / Link Güncelleme")
+    print("📋 AŞAMA 2: M3U Kaynaklarından Tüm Kanalları Ekleme")
     print("=" * 60)
 
-    if os.path.exists(M3U_FILE):
-        # MEVCUT playlist.m3u VAR: Sıralamayı koru, sadece link güncelle
-        print(f"Mevcut {M3U_FILE} bulundu. Sıralama korunuyor, sadece linkler güncelleniyor...")
-        with open(M3U_FILE, 'r', encoding='utf-8') as f:
-            existing_content = f.read()
-        existing_channels = m3u_parse(existing_content)
-        print(f"Mevcut {len(existing_channels)} kanal yüklendi.")
+    total_added = 0
 
-        # Kaynaklardan kanal adı -> link sözlüğü oluştur
-        source_links = {}
+    with open(M3U_FILE, 'a', encoding='utf-8') as f:
         for url in SOURCE_URLS:
             print(f"Kaynak çekiliyor: {url}")
             try:
@@ -85,184 +143,16 @@ def stage1_merge_sources():
                 resp.raise_for_status()
                 channels = m3u_parse(resp.text)
                 for ch in channels:
-                    source_links[ch['name']] = ch['url']
-                print(f"  {len(channels)} kanal tarandı.")
+                    for meta_line in ch['meta']:
+                        f.write(meta_line + '\n')
+                    f.write(ch['url'] + '\n')
+                total_added += len(channels)
+                print(f"  ✅ {len(channels)} kanal eklendi.")
             except Exception as e:
-                print(f"  HATA: {e}")
+                print(f"  ❌ HATA: {e}")
 
-        # Mevcut kanalların sadece linklerini güncelle
-        updated_count = 0
-        for ch in existing_channels:
-            if ch['name'] in source_links:
-                new_url = source_links[ch['name']]
-                if ch['url'] != new_url:
-                    ch['url'] = new_url
-                    updated_count += 1
-
-        # Güncellenmiş dosyayı yaz
-        with open(M3U_FILE, 'w', encoding='utf-8') as f:
-            f.write('#EXTM3U\n')
-            for ch in existing_channels:
-                for meta_line in ch['meta']:
-                    f.write(meta_line + '\n')
-                f.write(ch['url'] + '\n')
-
-        print(f"✅ Aşama 1 tamamlandı. {updated_count} kanalın linki güncellendi. "
-              f"Toplam {len(existing_channels)} kanal kaydedildi.\n")
-
-    else:
-        # playlist.m3u YOK: Kaynakları birleştir
-        print(f"{M3U_FILE} bulunamadı. Kaynaklar birleştiriliyor...")
-        all_channels = []
-        seen_channels = {}
-
-        for url in SOURCE_URLS:
-            print(f"Kaynak çekiliyor: {url}")
-            try:
-                resp = requests.get(url, timeout=15)
-                resp.raise_for_status()
-                channels = m3u_parse(resp.text)
-                print(f"  {len(channels)} kanal bulundu.")
-                for ch in channels:
-                    name = ch['name']
-                    if name not in seen_channels:
-                        all_channels.append(ch)
-                        seen_channels[name] = len(all_channels) - 1
-                    else:
-                        idx = seen_channels[name]
-                        all_channels[idx]['url'] = ch['url']
-            except Exception as e:
-                print(f"  HATA: {e}")
-
-        # Dosyayı yaz
-        with open(M3U_FILE, 'w', encoding='utf-8') as f:
-            f.write('#EXTM3U\n')
-            for ch in all_channels:
-                for meta_line in ch['meta']:
-                    f.write(meta_line + '\n')
-                f.write(ch['url'] + '\n')
-
-        print(f"✅ Aşama 1 tamamlandı. Toplam {len(all_channels)} kanal birleştirildi, "
-              f"tekrar edenler ayıklandı.\n")
-
-
-# ============================================================
-# AŞAMA 2: AVVA API'DEN LİNK GÜNCELLEME
-# ============================================================
-
-def get_fresh_links():
-    """API'den güncel m3u8 linklerini çek"""
-    try:
-        response = requests.get(API_URL, headers=API_HEADERS, timeout=30)
-        response.raise_for_status()
-        channels = response.json()
-    except Exception as e:
-        print(f"❌ API hatası: {e}")
-        return None
-
-    link_map = {}
-    for ch in channels:
-        name = ch.get("name", "").strip().upper()
-        url = ch.get("m3u8_url", "")
-        if name and url:
-            link_map[name] = url
-
-            # URL'den slug çıkar (örn: avvaupdate.com/ssport1/index.m3u8 -> ssport1)
-            slug_match = re.search(r'avvaupdate\.com/([^/]+)/', url)
-            if slug_match:
-                link_map[slug_match.group(1).lower()] = url
-
-    return link_map
-
-
-def update_playlist_avva(link_map):
-    """Mevcut playlist.m3u dosyasındaki avva linklerini güncelle"""
-    try:
-        with open(M3U_FILE, "r", encoding="utf-8") as f:
-            lines = f.readlines()
-    except FileNotFoundError:
-        print(f"❌ {M3U_FILE} dosyası bulunamadı!")
-        return False
-
-    new_lines = []
-    updated = 0
-    current_channel_name = ""
-
-    for i, line in enumerate(lines):
-        stripped = line.strip()
-
-        # #EXTINF satırından kanal adını al
-        if stripped.startswith("#EXTINF"):
-            comma_pos = stripped.rfind(",")
-            if comma_pos != -1:
-                current_channel_name = stripped[comma_pos + 1:].strip().upper()
-            new_lines.append(line)
-
-        # m3u8 link satırı - avva linkini güncelle
-        elif "avvaupdate.com" in stripped and ".m3u8" in stripped:
-            # Eski linkten slug çıkar
-            slug_match = re.search(r'avvaupdate\.com/([^/]+)/', stripped)
-            old_slug = slug_match.group(1).lower() if slug_match else ""
-
-            # Önce slug ile eşleştir, bulamazsa isimle dene
-            new_url = link_map.get(old_slug) or link_map.get(current_channel_name)
-
-            if new_url:
-                # 1. Karakter düzenlemeleri (URL encode)
-                new_url = new_url.replace("o=1&e", "o=1%26e")
-                new_url = new_url.replace("&", "%26")
-
-                # 2. Worker prefix ekle
-                prefix = "https://avva.magnitude.workers.dev/?url="
-                new_url = prefix + new_url
-
-                new_lines.append(new_url + "\n")
-                updated += 1
-                print(f"  ✅ Güncellendi: {current_channel_name}")
-            else:
-                new_lines.append(line)
-                print(f"  ⚠️ Eşleşme yok, eski link korundu: {current_channel_name}")
-
-        # Güncelleme tarih satırını güncelle
-        elif stripped.startswith("# Son Güncelleme:") or stripped.startswith("# Last Updated:"):
-            now = datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')
-            new_lines.append(f"# Son Güncelleme: {now}\n")
-
-        # Diğer satırlar aynen kalsın
-        else:
-            new_lines.append(line)
-
-    # Dosyayı yaz
-    with open(M3U_FILE, "w", encoding="utf-8") as f:
-        f.writelines(new_lines)
-
-    return updated
-
-
-def stage2_avva_update():
-    """Aşama 2: Avva API'den link güncelleme"""
-    print("=" * 60)
-    print("📡 AŞAMA 2: Avva API Link Güncelleme")
-    print("=" * 60)
-
-    now = datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')
-    print(f"🚀 [{now}] Avva linkleri güncelleniyor...\n")
-
-    # API'den güncel linkleri al
-    link_map = get_fresh_links()
-    if not link_map:
-        print("⚠️ Avva API'den link alınamadı, bu aşama atlanıyor.\n")
-        return
-
-    print(f"📡 API'den {len(link_map)} kanal linki alındı.\n")
-
-    # Mevcut playlist'teki avva linklerini güncelle
-    updated = update_playlist_avva(link_map)
-
-    if updated:
-        print(f"\n🎉 Aşama 2 tamamlandı! {updated} avva kanal linki güncellendi.\n")
-    else:
-        print("\n⚠️ Hiçbir avva linki güncellenemedi.\n")
+    print(f"\n✅ Aşama 2 tamamlandı. Toplam {total_added} kanal eklendi.\n")
+    return total_added
 
 
 # ============================================================
@@ -270,18 +160,19 @@ def stage2_avva_update():
 # ============================================================
 
 def main():
-    print("🔄 Playlist Güncelleme Başlıyor...")
+    print("🔄 Playlist Oluşturma Başlıyor...")
     print(f"📅 {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')}")
     print()
 
-    # Aşama 1: M3U kaynaklarını birleştir / güncelle
-    stage1_merge_sources()
+    # Aşama 1: Önce Avva API kanallarını ekle
+    count1 = stage1_avva_add()
 
-    # Aşama 2: Avva API'den linkleri güncelle
-    stage2_avva_update()
+    # Aşama 2: Sonra M3U kaynaklarından tüm kanalları ekle
+    count2 = stage2_add_all_sources()
 
     print("=" * 60)
-    print("🏁 Tüm işlemler tamamlandı!")
+    total = (count1 or 0) + (count2 or 0)
+    print(f"🏁 Tüm işlemler tamamlandı! Toplam {total} kanal playlist'e eklendi.")
     print("=" * 60)
 
 
