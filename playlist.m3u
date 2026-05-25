@@ -67,7 +67,26 @@ https://tv-trtspor1.medya.trt.com.tr/master_1080.m3u8
 https://netspor.tecostream.xyz/bsh.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/CYTEuoR.png" group-title="TR Spor",A Spor
 https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/aspor/aspor_1080p.m3u8
-#EXTINF:-1 tvg-id="33" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560813_a1327f34eaf278d46cca.png" group-title="Avva Sports",A HABER
-https://avva.magnitude.workers.dev/?url=https://avvaupdate.com/ahaber/index.m3u8?o=1%26e=1779685605%26tk=19486bc3c5569216443dbcf5dd4ed4fb
-#EXTINF:-1 tvg-id="34" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560831_89666f2f82d64d3393e4.png" group-title="Avva Sports",ATV
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/78/Atv_logosu.png" group-title="Ulusal",ATV
 https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_1080p.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/78/Atv_logosu.png" group-title="Ulusal",ATV Yedek
+https://api.hitnova.net/s/atv/mono.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/f/f1/Logo_of_Show_TV.png" group-title="Ulusal",Show Tv
+https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/showtv/showtv_1080p.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/a/a4/Kanal_D_logo.png" group-title="Ulusal",Kanal D Yedek
+https://ackaxsqacw.turknet.ercdn.net/ozfkfbbjba/kanald/kanald_1080p.m3u8
+#EXTINF:-1 tvg-logo="https://filedn.eu/l5ABGVFVcpIfW9YXHkcxLX7/freelogo/fox-turkiye-logo.png" group-title="Ulusal",Now Tv
+https://uycyyuuzyh.turknet.ercdn.net/nphindgytw/nowtv/nowtv_720p.m3u8
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/6/68/Tv8_Yeni_Logo.png" group-title="Ulusal",Tv 8
+https://tv8.daioncdn.net/tv8/tv8_1080p.m3u8?&sid=7uwoyq6usvp2&app=7ddc255a-ef47-4e81-ab14-c0e5f2949788&ce=2
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/6/68/Tv8_Yeni_Logo.png" group-title="Ulusal",TV 8.5
+https://tv8.daioncdn.net/tv8bucuk/tv8bucuk_480p.m3u8?&sid=7tra76g4cefx&app=bf58ab52-4865-4c81-b223-26b41009801e&ce=3
+#EXTINF:-1 tvg-logo="https://static.wikia.nocookie.net/logopedia/images/c/ce/Kanal_7_logosu.png" group-title="Ulusal",Kanal 7
+https://yurhnwtpys.turknet.ercdn.net/cvmbjbpmdx/kanal7/kanal7_1080p.m3u8
+
+#EXTINF:-1 tvg-id="39" tvg-logo="https://feo.kablowebtv.com/resize/168A635D265A4328C2883FB4CD8FF/0/0/Vod/HLS/00a59236-8875-4555-a97c-94b7633e14fa.png" group-title="Ulusal",TRT GENÇ
+https://tv-trtgenc.medya.trt.com.tr/master.m3u8
+
+#EXTINF:-1 tvg-id="33" tvg-logo="https://avvasportshd1.com/uploads/logos/1777560813_a1327f34eaf278d46cca.png" group-title="Haber",A HABER
+https://avva.magnitude.workers.dev/?url=https://avvaupdate.com/ahaber/index.m3u8?o=1%26e=1779685605%26tk=19486bc3c5569216443dbcf5dd4ed4fb
