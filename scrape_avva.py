@@ -30,9 +30,6 @@ API_HEADERS = {
 # Çıkış dosyası
 M3U_FILE = "playlist.m3u"
 
-# Sıralama referans dosyası (bu dosyadaki sıra korunur, sadece linkler güncellenir)
-REFERENCE_FILE = "olaylısı.m3u"
-
 
 # ============================================================
 # AŞAMA 1: M3U KAYNAKLARINI BİRLEŞTİR / LİNK GÜNCELLE
@@ -71,142 +68,142 @@ def is_avva_channel(channel):
 
 
 def stage1_merge_sources():
-    """Aşama 1: olaylısı.m3u referans alınarak sadece linkler güncellenir,
-    sıralama/metadata/isim hiçbir şeye dokunulmaz. Yeni kanallar sona eklenir."""
+    """Aşama 1: M3U kaynaklarını birleştir veya mevcut dosyadaki linkleri güncelle + yeni kanalları ekle"""
     print("=" * 60)
     print("📋 AŞAMA 1: M3U Kaynakları Birleştirme / Link Güncelleme")
     print("=" * 60)
 
-    # ----------------------------------------------------------------
-    # Referans dosyasından (olaylısı.m3u) sıralamayı yükle
-    # ----------------------------------------------------------------
-    if os.path.exists(REFERENCE_FILE):
-        print(f"Referans dosyası bulundu: {REFERENCE_FILE}")
-        with open(REFERENCE_FILE, 'r', encoding='utf-8') as f:
-            reference_content = f.read()
-        reference_channels = m3u_parse(reference_content)
-        print(f"Referans dosyasından {len(reference_channels)} kanal yüklendi.")
-    else:
-        print(f"⚠️ Referans dosyası ({REFERENCE_FILE}) bulunamadı!")
-        reference_channels = []
-
-    # ----------------------------------------------------------------
-    # Mevcut playlist.m3u varsa yükle (Avva linkleri için)
-    # ----------------------------------------------------------------
-    existing_channels_map = {}
     if os.path.exists(M3U_FILE):
+        # ----------------------------------------------------------------
+        # MEVCUT playlist.m3u VAR
+        # Kural:
+        #   - Mevcut sıralama KESINLIKLE korunur (avva dahil hiçbir şey)
+        #   - Kaynaklarda isim eşleşen kanalların SADECE linki güncellenir
+        #   - Yeni kanallar listenin SONUNA eklenir
+        #   - Meta/isim/grup hiçbir şeye dokunulmaz
+        # ----------------------------------------------------------------
+        print(f"Mevcut {M3U_FILE} bulundu. Sadece linkler güncelleniyor...")
         with open(M3U_FILE, 'r', encoding='utf-8') as f:
             existing_content = f.read()
         existing_channels = m3u_parse(existing_content)
+        print(f"Mevcut {len(existing_channels)} kanal yüklendi.")
+
+        # Mevcut kanal isimlerini set olarak tut (hızlı arama için)
+        existing_names = set(ch['name'] for ch in existing_channels)
+
+        # Kaynaklardan kanal adı -> link sözlüğü oluştur + yeni kanalları topla
+        source_links = {}        # isim -> url  (link güncelleme için)
+        source_meta = {}         # isim -> meta (sadece yeni kanallar için)
+        new_channels_from_sources = []
+        new_names_added = set()
+
+        for url in SOURCE_URLS:
+            print(f"Kaynak çekiliyor: {url}")
+            try:
+                resp = requests.get(url, timeout=15)
+                resp.raise_for_status()
+                channels = m3u_parse(resp.text)
+                for ch in channels:
+                    # Link güncelleme sözlüğüne ekle
+                    # Aynı isim birden fazla kaynakta varsa SON kaynak kazanır
+                    source_links[ch['name']] = ch['url']
+                    source_meta[ch['name']] = ch['meta']
+
+                    # Yeni kanal mı kontrol et
+                    if ch['name'] not in existing_names and ch['name'] not in new_names_added:
+                        new_channels_from_sources.append(ch)
+                        new_names_added.add(ch['name'])
+
+                print(f"  {len(channels)} kanal tarandı.")
+            except Exception as e:
+                print(f"  HATA: {e}")
+
+        # ----------------------------------------------------------------
+        # Mevcut kanalların SADECE linklerini güncelle
+        # Sıralama, meta, isim — hiçbir şeye dokunma
+        # ----------------------------------------------------------------
+        updated_count = 0
         for ch in existing_channels:
-            existing_channels_map[ch['name']] = ch
-        print(f"Mevcut {M3U_FILE} dosyasından {len(existing_channels)} kanal yüklendi.")
+            if ch['name'] in source_links:
+                new_url = source_links[ch['name']]
+                if ch['url'] != new_url:
+                    print(f"  🔗 Link güncellendi: {ch['name']}")
+                    print(f"     Eski: {ch['url']}")
+                    print(f"     Yeni: {new_url}")
+                    ch['url'] = new_url
+                    updated_count += 1
 
-    # ----------------------------------------------------------------
-    # Kaynaklardan kanal adı -> link sözlüğü oluştur
-    # ----------------------------------------------------------------
-    source_links = {}
-    for url in SOURCE_URLS:
-        print(f"Kaynak çekiliyor: {url}")
-        try:
-            resp = requests.get(url, timeout=15)
-            resp.raise_for_status()
-            channels = m3u_parse(resp.text)
-            for ch in channels:
-                # Aynı isim birden fazla kaynakta varsa son kaynak kazanır
-                source_links[ch['name']] = ch['url']
-            print(f"  {len(channels)} kanal tarandı.")
-        except Exception as e:
-            print(f"  HATA: {e}")
+        # ----------------------------------------------------------------
+        # Yeni kanalları SONUNA ekle (avva olanlar dahil)
+        # NOT: Yeni kanallar için sıralama uygulanmaz,
+        #      ilk oluşturma aşamasında zaten avva başta oluşuyor.
+        # ----------------------------------------------------------------
+        if new_channels_from_sources:
+            existing_channels.extend(new_channels_from_sources)
+            print(f"🆕 {len(new_channels_from_sources)} yeni kanal listenin sonuna eklendi:")
+            for ch in new_channels_from_sources:
+                print(f"   + {ch['name']}")
 
-    print(f"\nKaynaklardan toplam {len(source_links)} benzersiz kanal linki toplandı.")
+        # ----------------------------------------------------------------
+        # Güncellenmiş dosyayı yaz — sıra mevcut haliyle korunur
+        # ----------------------------------------------------------------
+        with open(M3U_FILE, 'w', encoding='utf-8') as f:
+            f.write('#EXTM3U\n')
+            for ch in existing_channels:
+                for meta_line in ch['meta']:
+                    f.write(meta_line + '\n')
+                f.write(ch['url'] + '\n')
 
-    # ----------------------------------------------------------------
-    # Referans dosyasındaki sıralamayı koru, sadece linkleri güncelle
-    # Avva kanallarının linkine DOKUNMA (Aşama 2 halleder)
-    # ----------------------------------------------------------------
-    updated_count = 0
-    final_channels = []
-    reference_names = set()
+        print(f"✅ Aşama 1 tamamlandı. {updated_count} kanalın linki güncellendi, "
+              f"{len(new_channels_from_sources)} yeni kanal eklendi. "
+              f"Toplam {len(existing_channels)} kanal kaydedildi.\n")
 
-    for ref_ch in reference_channels:
-        reference_names.add(ref_ch['name'])
+    else:
+        # ----------------------------------------------------------------
+        # playlist.m3u YOK: İlk oluşturma
+        # Avva kanalları BAŞA alınır, sonra diğerleri
+        # ----------------------------------------------------------------
+        print(f"{M3U_FILE} bulunamadı. Kaynaklar birleştiriliyor...")
+        all_channels = []
+        seen_channels = {}
 
-        # Mevcut playlist'ten bu kanalın güncel halini al (varsa)
-        current_ch = existing_channels_map.get(ref_ch['name'])
+        for url in SOURCE_URLS:
+            print(f"Kaynak çekiliyor: {url}")
+            try:
+                resp = requests.get(url, timeout=15)
+                resp.raise_for_status()
+                channels = m3u_parse(resp.text)
+                print(f"  {len(channels)} kanal bulundu.")
+                for ch in channels:
+                    name = ch['name']
+                    if name not in seen_channels:
+                        all_channels.append(ch)
+                        seen_channels[name] = len(all_channels) - 1
+                    else:
+                        # Tekrar eden kanalda sadece linki güncelle
+                        idx = seen_channels[name]
+                        all_channels[idx]['url'] = ch['url']
+            except Exception as e:
+                print(f"  HATA: {e}")
 
-        # Avva kanalıysa linke dokunma, olduğu gibi bırak
-        if current_ch and is_avva_channel(current_ch):
-            # Avva kanalı: meta referanstan, link mevcut playlist'ten
-            final_channels.append({
-                'name': ref_ch['name'],
-                'meta': ref_ch['meta'],   # metadata referanstan gelir (değişmez)
-                'url': current_ch['url']  # link mevcut playlist'ten (Aşama 2 günceller)
-            })
-            continue
+        # *** İLK OLUŞTURMADA Avva kanalları başa al ***
+        avva_channels = [ch for ch in all_channels if is_avva_channel(ch)]
+        non_avva_channels = [ch for ch in all_channels if not is_avva_channel(ch)]
+        sorted_channels = avva_channels + non_avva_channels
 
-        # Avva kanalı değilse: kaynaklardan link güncelle
-        new_url = source_links.get(ref_ch['name'])
+        if avva_channels:
+            print(f"📡 {len(avva_channels)} Avva kanalı listenin başına yerleştirildi.")
 
-        if new_url:
-            # Kaynak linki farklıysa güncelle
-            old_url = current_ch['url'] if current_ch else ref_ch['url']
-            if old_url != new_url:
-                updated_count += 1
-                print(f"  🔄 Link güncellendi: {ref_ch['name']}")
-            final_channels.append({
-                'name': ref_ch['name'],
-                'meta': ref_ch['meta'],  # metadata referanstan (değişmez)
-                'url': new_url           # link kaynaktan
-            })
-        else:
-            # Kaynaklarda bulunamadı: mevcut linki koru
-            keep_url = current_ch['url'] if current_ch else ref_ch['url']
-            final_channels.append({
-                'name': ref_ch['name'],
-                'meta': ref_ch['meta'],
-                'url': keep_url
-            })
+        # Dosyayı yaz
+        with open(M3U_FILE, 'w', encoding='utf-8') as f:
+            f.write('#EXTM3U\n')
+            for ch in sorted_channels:
+                for meta_line in ch['meta']:
+                    f.write(meta_line + '\n')
+                f.write(ch['url'] + '\n')
 
-    # ----------------------------------------------------------------
-    # Kaynaklarda olup referansta olmayan yeni kanalları sona ekle
-    # ----------------------------------------------------------------
-    new_channels_added = []
-    for url in SOURCE_URLS:
-        try:
-            resp = requests.get(url, timeout=15)
-            resp.raise_for_status()
-            channels = m3u_parse(resp.text)
-            for ch in channels:
-                if ch['name'] not in reference_names and ch['name'] not in [
-                    nc['name'] for nc in new_channels_added
-                ]:
-                    new_channels_added.append(ch)
-                    reference_names.add(ch['name'])
-        except Exception:
-            pass
-
-    if new_channels_added:
-        final_channels.extend(new_channels_added)
-        print(f"\n🆕 {len(new_channels_added)} yeni kanal listenin sonuna eklendi:")
-        for ch in new_channels_added:
-            print(f"   + {ch['name']}")
-
-    # ----------------------------------------------------------------
-    # Dosyayı yaz (sıralama olaylısı.m3u ile aynı, sadece linkler değişti)
-    # ----------------------------------------------------------------
-    with open(M3U_FILE, 'w', encoding='utf-8') as f:
-        f.write('#EXTM3U\n')
-        for ch in final_channels:
-            for meta_line in ch['meta']:
-                f.write(meta_line + '\n')
-            f.write(ch['url'] + '\n')
-
-    print(f"\n✅ Aşama 1 tamamlandı.")
-    print(f"   📊 {updated_count} kanalın linki güncellendi.")
-    print(f"   🆕 {len(new_channels_added)} yeni kanal eklendi.")
-    print(f"   📋 Toplam {len(final_channels)} kanal kaydedildi.")
-    print(f"   🔒 Sıralama olaylısı.m3u referansına göre korundu.\n")
+        print(f"✅ Aşama 1 tamamlandı. Toplam {len(sorted_channels)} kanal birleştirildi, "
+              f"tekrar edenler ayıklandı.\n")
 
 
 # ============================================================
@@ -337,7 +334,7 @@ def main():
     print(f"📅 {datetime.utcnow().strftime('%Y-%m-%d %H:%M UTC')}")
     print()
 
-    # Aşama 1: olaylısı.m3u referansıyla linkleri güncelle
+    # Aşama 1: M3U kaynaklarını birleştir / güncelle
     stage1_merge_sources()
 
     # Aşama 2: Avva API'den linkleri güncelle
