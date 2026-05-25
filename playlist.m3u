@@ -63,6 +63,31 @@ https://avva.magnitude.workers.dev/?url=https://avvaupdate.com/exxen3/index.m3u8
 https://avva.magnitude.workers.dev/?url=https://avvaupdate.com/exxen4/index.m3u8?o=1%26e=1779756829%26tk=d1671db836a7674eb1ff81417af7e767
 #EXTINF:-1 tvg-logo="https://avvasportshd1.com/uploads/logos/1777560060_2fc5771ade410ea2658e.png" group-title="Spor",EXXEN 5
 https://avva.magnitude.workers.dev/?url=https://avvaupdate.com/exxen5/index.m3u8?o=1%26e=1779756829%26tk=d1671db836a7674eb1ff81417af7e767
+
+#EXTINF:-1 tvg-id="bein_sport" tvg-name="BeIN Sport 1" tvg-language="Turkish" tvg-country="TR" tvg-logo="https://seeklogo.com/images/B/bein-sports-1-logo-4E5E4AE6B8-seeklogo.com.png" group-title="Spor",BeIN Sport 1 zeus
+https://zeus324232.cfd/b1/index.txt
+
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/logolar/refs/heads/master/kanallogolari/bein.png" group-title="Spor",beIN Sports 1-Gav
+https://gavatlar.b-cdn.net/bein.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/logolar/refs/heads/master/kanallogolari/bein.png" group-title="Spor",beIN Sports 1-Ron
+https://ronaldo.magnitude.workers.dev/?url=https://corestream.ronaldovurdu.help//bein1/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="Spor",beIN Sports 2-R
+https://ronaldo.magnitude.workers.dev/?url=https://corestream.ronaldovurdu.help/bein2/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="Spor",beIN Sports 3-R
+https://ronaldo.magnitude.workers.dev/?url=https://corestream.ronaldovurdu.help/bein3/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="Spor",beIN Sports 4-R
+https://ronaldo.magnitude.workers.dev/?url=https://corestream.ronaldovurdu.help/bein4/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="Spor",beIN Sports 5-R
+https://ronaldo.magnitude.workers.dev/?url=https://corestream.ronaldovurdu.help/bein5/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="Spor",beIN Sports Max 1-R
+https://ronaldo.magnitude.workers.dev/?url=https://corestream.ronaldovurdu.help/hls/bein-sports-max-1.m3u8
+#EXTINF:-1 group-title="Spor",beIN Sports Max 2-R
+https://ronaldo.magnitude.workers.dev/?url=https://corestream.ronaldovurdu.help/hls/bein-sports-max-2.m3u8
+#EXTINF:-1 group-title="Spor",S Sport-R
+https://ronaldo.magnitude.workers.dev/?url=https://corestream.ronaldovurdu.help/s-sportt/tracks-v1a1/mono.m3u8
+#EXTINF:-1 group-title="Spor",S Sport 2-R
+https://ronaldo.magnitude.workers.dev/?url=https://corestream.ronaldovurdu.help//s-sport2/tracks-v1a1/mono.m3u8
+
 #EXTINF:-1 group-title="Vavoo Spor" tvg-logo="https://raw.githubusercontent.com/kadirsener1/logolar/refs/heads/master/kanallogolari/beIN-SPORTS-1-HD.png" tvg-id="BeinSports1.tr",BEIN SPOTS1 SD
 https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv/play/143239535a2e3c23c1d16
 #EXTINF:-1 group-title="Vavoo Spor" tvg-logo="https://raw.githubusercontent.com/kadirsener1/logolar/refs/heads/master/kanallogolari/beIN-SPORTS-1-HD.png" tvg-id="BeinSports1.tr",BEIN 1 FEED (720P)
