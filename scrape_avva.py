@@ -11,7 +11,7 @@ from datetime import datetime
 # Kaynak M3U URL'leri (1. aşama için)
 SOURCE_URLS = [
     "https://raw.githubusercontent.com/kadirsener1/tivim/refs/heads/main/m3u/trspor.m3u",
-    "https://raw.githubusercontent.com/kadirsener1/iptv-panel/refs/heads/main/tv247.m3u",
+    https://raw.githubusercontent.com/kadirsener1/247/refs/heads/main/tv247.m3u
     "https://raw.githubusercontent.com/kadirsener1/tivim/refs/heads/main/m3u/ulusal.m3u",
     "https://raw.githubusercontent.com/kadirsener1/tivim/refs/heads/main/m3u/haber.m3u",
     "https://raw.githubusercontent.com/kadirsener1/tivim/refs/heads/main/m3u/cocuk.m3u",
