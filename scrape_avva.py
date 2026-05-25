@@ -14,6 +14,7 @@ SOURCE_URLS = [
     "https://raw.githubusercontent.com/kadirsener1/iptv-panel/refs/heads/main/tv247.m3u",
     "https://raw.githubusercontent.com/kadirsener1/tivim/refs/heads/main/m3u/hit.m3u",
     "https://raw.githubusercontent.com/kadirsener1/tivim/refs/heads/main/m3u/ulusal.m3u",
+    "https://raw.githubusercontent.com/kadirsener1/tivim/refs/heads/main/m3u/haber.m3u",
     "https://raw.githubusercontent.com/kadirsener1/tivim/refs/heads/main/m3u/cocuk.m3u",
 ]
 
