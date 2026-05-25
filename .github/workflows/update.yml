@@ -2,7 +2,7 @@ name: Avva Sports Link Güncelle
 
 on:
   schedule:
-    - cron: '*/31 * * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 jobs:
