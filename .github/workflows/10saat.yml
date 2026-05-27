@@ -2,7 +2,7 @@ name: Avva Sports Link Güncelle 10 saat
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 */10 * * *'
   workflow_dispatch:
 
 jobs:
