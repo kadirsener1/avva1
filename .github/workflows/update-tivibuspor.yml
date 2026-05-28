@@ -1,16 +1,16 @@
-name: Canlı Yayın Adresini Güncelle
+name: Tivibu Spor Bağlantısını Güncelle
 
 on:
   schedule:
-    # Her gün 06:00 ve 18:00 UTC'de çalışır
+    # Her gün 06:00 ve 18:00 UTC'de çalışır (isteğe göre değiştirin)
     - cron: '0 3,6,9,12,15,18,21,0 * * *'
   workflow_dispatch:   # Manuel tetikleme
 
 jobs:
-  update-stream:
+  update-playlist:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # Commit yetkisi
+      contents: write   # Depoya commit atabilmek için
 
     steps:
       - name: Depoyu klonla
@@ -24,9 +24,9 @@ jobs:
       - name: Bağımlılıkları yükle
         run: pip install requests
 
-      - name: Güncel playlist dosyasını oluştur
+      - name: Playlist dosyasını güncelle
         run: |
-          python find_stream.py \
+          python update_playlist.py \
             "https://streams.uzunmuhalefet.com/stream/e47153e0-42fe-4980-8570-e840d1cc1cf4.m3u8" \
             "playlist.m3u"
 
@@ -40,6 +40,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Değişiklik yok."
           else
-            git commit -m "Otomatik güncelleme: playlist.m3u [skip ci]"
+            git commit -m "Tivibu Spor bağlantısı güncellendi [skip ci]"
             git push
           fi
