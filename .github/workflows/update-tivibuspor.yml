@@ -2,8 +2,8 @@ name: M3U8 Otomatik Güncelleyici
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Her 5 dakikada bir çalışır
-  workflow_dispatch:         # Manuel çalıştırma butonu
+    - cron: '*/55 * * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Repo'yu Klonla
+      - name: 📥 Repo Klonla
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
