@@ -1,3 +1,4 @@
+#EXTM3U
 
 #EXTINF:-1 tvg-id="bein-sports-1-turkey" tvg-name="beIN Sports 1 Turkey" group-title="Spor",beIN Sports 1 Turkey
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2MiIsInRzIjoxNzc5OTY4MDg5NjQ1fQ==
@@ -1941,3 +1942,5 @@ https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI1MjAiLCJ0cy
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzNDkiLCJ0cyI6MTc3OTk5MzI5NzMwMn0=
 #EXTINF:-1 tvg-id="tnt-sports-2" tvg-name="TNT Sports 2 UK" group-title="GB",TNT Sports 2 UK
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzMiIsInRzIjoxNzc5OTkzODk5NDgwfQ==
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/3/36/Tivibu_spor_logosu.jpg" group-title="TR Spor",Tivibu Spor
+http://50.7.144.122:1935/live/tivibuspor.stream/chunklist_w1364035932.m3u8?hash=662f3d76c1d38bf7ec82bd9a82745f2b
