@@ -1,16 +1,16 @@
-name: tivibu Canlı Yayın Adresini Güncelle
+name: Canlı Yayın Adresini Güncelle
 
 on:
   schedule:
-    # Her gün 06:00 ve 18:00 UTC'de çalışır (isteğe göre ayarlayın)
-    - cron: '0 6,18 * * *'
-  workflow_dispatch:   # Manuel tetikleme için
+    # Her gün 06:00 ve 18:00 UTC'de çalışır
+    - cron: '0 6,12,18 * * *'
+  workflow_dispatch:   # Manuel tetikleme
 
 jobs:
   update-stream:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # Commit atabilmek için
+      contents: write   # Commit yetkisi
 
     steps:
       - name: Depoyu klonla
@@ -37,9 +37,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add stream_url.m3u8
-          # Yalnızca gerçekten değişiklik varsa commit yap
           if git diff --cached --quiet; then
-            echo "Herhangi bir değişiklik yok."
+            echo "Değişiklik yok."
           else
             git commit -m "Otomatik güncelleme: yeni yayın adresi [skip ci]"
             git push
