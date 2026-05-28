@@ -1,9 +1,8 @@
 #EXTM3U
-# Guncelleme: 2026-05-28 20:27:08
+# Guncelleme: 2026-05-28 20:31:55
 # Kaynak: https://streams.uzunmuhalefet.com/stream/e47153e0-42fe-4980-8570-e840d1cc1cf4.m3u8
+# Bulunan link sayisi: 1
 
-#EXTINF:-1 tvg-id="uzunmuhalefet" tvg-name="Uzun Muhalefet" tvg-logo="" group-title="Canli Yayin",Uzun Muhalefet
-https://streams.uzunmuhalefet.com/stream/e47153e0-42fe-4980-8570-e840d1cc1cf4.m3u8
+#EXTINF:-1 tvg-id="stream1" tvg-name="Stream 1" group-title="Canli",Stream 1
+https://streams.uzunmuhalefet.com/stream/chunklist_w1293699837.m3u8?hash=fe360a18168cd394274857e6af632f13
 
-# === Alt Stream Linkleri ===
-# [1] https://streams.uzunmuhalefet.com/stream/chunklist_w263875173.m3u8?hash=a4f28eb6e38b8abcb6d14a1059e9eaaa
