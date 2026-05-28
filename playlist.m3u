@@ -238,6 +238,10 @@ https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/aspor/aspor_1080p.m3u8
 https://zeus324232.cfd/xaspor/index.m3u8
 #EXTINF:-1 tvg-logo="https://avvasportshd1.com/uploads/logos/1777560801_2c4378c937808336db7d.png" group-title="TR Spor",A SPOR-avva
 https://avva.magnitude.workers.dev/?url=https://avvaupdate.com/aspor/index.m3u8?o=1%26e=1780007022%26tk=a2c4ac31d65cbb5cfb86ba0d5d96b245
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/3/36/Tivibu_spor_logosu.jpg" group-title="TR Spor",Tivibu Spor
+https://streams.uzunmuhalefet.com/stream/e47153e0-42fe-4980-8570-e840d1cc1cf4.m3u8
+
 #EXTINF:-1 tvg-id="arena-sport-1-premium" tvg-name="Arena Sport 1 Premium" group-title="World Sports",Arena Sport 1 Premium
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIxMzQiLCJ0cyI6MTc3OTk5MzIwOTI3NX0=
 #EXTINF:-1 tvg-id="arena-sport-2-premium" tvg-name="Arena Sport 2 Premium" group-title="World Sports",Arena Sport 2 Premium
@@ -1942,5 +1946,4 @@ https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI1MjAiLCJ0cy
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzNDkiLCJ0cyI6MTc3OTk5MzI5NzMwMn0=
 #EXTINF:-1 tvg-id="tnt-sports-2" tvg-name="TNT Sports 2 UK" group-title="GB",TNT Sports 2 UK
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzMiIsInRzIjoxNzc5OTkzODk5NDgwfQ==
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/3/36/Tivibu_spor_logosu.jpg" group-title="TR Spor",Tivibu Spor
-http://50.7.144.122:1935/live/tivibuspor.stream/chunklist_w1364035932.m3u8?hash=662f3d76c1d38bf7ec82bd9a82745f2b
+
