@@ -1,32 +1,38 @@
-name: Tivibuspor Link Updater
+name: M3U8 Otomatik Güncelleyici
 
 on:
   schedule:
-    - cron: '*/30 * * * *'     # Her 30 dakikada bir çalışır
-  workflow_dispatch:           # Manuel olarak da tetikleyebilirsin
+    - cron: '*/5 * * * *'  # Her 5 dakikada bir çalışır
+  workflow_dispatch:         # Manuel çalıştırma butonu
+
+permissions:
+  contents: write
 
 jobs:
-  update:
+  update-m3u8:
     runs-on: ubuntu-latest
-    steps:
-      - name: Repository'yi Çek
-        uses: actions/checkout@v4
 
-      - name: Python Kurulumu
+    steps:
+      - name: 📥 Repo'yu Klonla
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🐍 Python Kur
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Gereksinimleri Yükle
+      - name: 📦 Kütüphaneleri Yükle
         run: pip install requests
 
-      - name: Linki Güncelle
-        run: python tivibu.py
+      - name: 🔄 M3U8 Güncelle
+        run: python m3u8_updater.py
 
-      - name: Değişiklikleri Kaydet ve Push'la
+      - name: 📤 Değişiklikleri Kaydet
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add tivibuspor_live.txt tivibuspor.m3u
-          git commit -m "Auto update: Tivibuspor link updated" || echo "No changes to commit"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add tivibu.m3u8
+          git diff --staged --quiet || git commit -m "🔄 M3U8 güncellendi - $(date +'%Y-%m-%d %H:%M:%S')"
           git push
