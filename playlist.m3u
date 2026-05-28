@@ -654,9 +654,9 @@ https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI3OTAiLCJ0cy
 #EXTINF:-1 tvg-id="cytavision-sports-1-cyprus" tvg-name="Cytavision Sports 1 Cyprus" group-title="CY",Cytavision Sports 1 Cyprus
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI5MTEiLCJ0cyI6MTc3OTk4MzA2ODIyNX0=
 #EXTINF:-1 tvg-id="cytavision-sports-2-cyprus" tvg-name="Cytavision Sports 2 Cyprus" group-title="CY",Cytavision Sports 2 Cyprus
-https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI5MTIiLCJ0cyI6MTc3OTk4MzA2OTIyNX0=
+https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI5MTIiLCJ0cyI6MTc3OTk4MzA2OTIyNX0==&timeout=0&buffer=0
 #EXTINF:-1 tvg-id="cytavision-sports-3-cyprus" tvg-name="Cytavision Sports 3 Cyprus" group-title="CY",Cytavision Sports 3 Cyprus
-https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI5MTMiLCJ0cyI6MTc3OTk4MzA3MDIyNX0=
+https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI5MTMiLCJ0cyI6MTc3OTk4MzA3MDIyNX0==&timeout=1&buffer=0
 #EXTINF:-1 tvg-id="cytavision-sports-4-cyprus" tvg-name="Cytavision Sports 4 Cyprus" group-title="CY",Cytavision Sports 4 Cyprus
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI5MTQiLCJ0cyI6MTc3OTk4MzA3MTIyNn0=
 #EXTINF:-1 tvg-id="cytavision-sports-5-cyprus" tvg-name="Cytavision Sports 5 Cyprus" group-title="CY",Cytavision Sports 5 Cyprus
@@ -1683,10 +1683,10 @@ https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI5MjEiLCJ0cy
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI5MjIiLCJ0cyI6MTc3OTk4MzU4MzM3NX0=
 #EXTINF:-1 tvg-id="tnt-sports-1" tvg-name="TNT Sports 1 UK" group-title="GB",TNT Sports 1 UK
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzMSIsInRzIjoxNzc5OTgzNTg0Mzc1fQ==
-#EXTINF:-1 tvg-id="tnt-sports-2" tvg-name="TNT Sports 2 UK" group-title="GB",TNT Sports 2 UK
-https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzMiIsInRzIjoxNzc5OTgzNTg1Mzc1fQ==
+#EXTINF:-1 tvg-id="tnt-sports-2" tvg-name="TNT Sports 2 UK" group-title="GB",TNT Sports 2 UK teset
+https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzMiIsInRzIjoxNzc5OTgzNTg1Mzc1fQ===&timeout=0&buffer=0
 #EXTINF:-1 tvg-id="tnt-sports-3" tvg-name="TNT Sports 3 UK" group-title="GB",TNT Sports 3 UK
-https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzMyIsInRzIjoxNzc5OTgzNTg2Mzc2fQ==
+https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzMyIsInRzIjoxNzc5OTgzNTg2Mzc2fQ===&timeout=0&buffer=0
 #EXTINF:-1 tvg-id="tnt-sports-4" tvg-name="TNT Sports 4 UK" group-title="GB",TNT Sports 4 UK
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzNCIsInRzIjoxNzc5OTgzNTg3Mzc2fQ==
 #EXTINF:-1 tvg-id="tsn" tvg-name="TSN1" group-title="CA",TSN1
