@@ -3,7 +3,7 @@ name: Canlı Yayın Adresini Güncelle
 on:
   schedule:
     # Her gün 06:00 ve 18:00 UTC'de çalışır
-    - cron: '0 6,12,18 * * *'
+    - cron: '0 3,6,9,12,15,18,21,0 * * *'
   workflow_dispatch:   # Manuel tetikleme
 
 jobs:
@@ -24,11 +24,11 @@ jobs:
       - name: Bağımlılıkları yükle
         run: pip install requests
 
-      - name: Güncel yayın adresini al
+      - name: Güncel playlist dosyasını oluştur
         run: |
           python find_stream.py \
             "https://streams.uzunmuhalefet.com/stream/e47153e0-42fe-4980-8570-e840d1cc1cf4.m3u8" \
-            "stream_url.m3u8"
+            "playlist.m3u"
 
       - name: Değişiklikleri commit et ve pushla
         env:
@@ -36,10 +36,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add stream_url.m3u8
+          git add playlist.m3u
           if git diff --cached --quiet; then
             echo "Değişiklik yok."
           else
-            git commit -m "Otomatik güncelleme: yeni yayın adresi [skip ci]"
+            git commit -m "Otomatik güncelleme: playlist.m3u [skip ci]"
             git push
           fi
