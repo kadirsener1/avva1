@@ -484,7 +484,7 @@ https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzMDYiLCJ0cy
 #EXTINF:-1 tvg-id="bravo-usa" tvg-name="Bravo USA" group-title="US",Bravo USA
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzMDciLCJ0cyI6MTc3OTk4Mjk4MjIwMH0=
 #EXTINF:-1 tvg-id="bbc-news-channel-hd" tvg-name="BBC News Channel HD" group-title="GB",BBC News Channel HD
-https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzNDkiLCJ0cyI6MTc3OTk4Mjk4MzIwMH0=
+https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzNDkiLCJ0cyI6MTc3OTk4Mjk4MzIwMH0=&type=m3u8
 #EXTINF:-1 tvg-id="bbc-one-uk" tvg-name="BBC One UK" group-title="GB",BBC One UK
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzNTYiLCJ0cyI6MTc3OTk4Mjk4NDIwMX0=
 #EXTINF:-1 tvg-id="bbc-two-uk" tvg-name="BBC Two UK" group-title="GB",BBC Two UK
@@ -652,7 +652,7 @@ https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI5MTAiLCJ0cy
 #EXTINF:-1 tvg-id="cmtv-portugal" tvg-name="CMTV Portugal" group-title="PT",CMTV Portugal
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI3OTAiLCJ0cyI6MTc3OTk4MzA2NzIyNX0=
 #EXTINF:-1 tvg-id="cytavision-sports-1-cyprus" tvg-name="Cytavision Sports 1 Cyprus" group-title="CY",Cytavision Sports 1 Cyprus
-https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI5MTEiLCJ0cyI6MTc3OTk4MzA2ODIyNX0=
+https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI5MTEiLCJ0cyI6MTc3OTk4MzA2ODIyNX0==&timeout=0&buffer=0
 #EXTINF:-1 tvg-id="cytavision-sports-2-cyprus" tvg-name="Cytavision Sports 2 Cyprus" group-title="CY",Cytavision Sports 2 Cyprus
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI5MTIiLCJ0cyI6MTc3OTk4MzA2OTIyNX0==&timeout=0&buffer=0
 #EXTINF:-1 tvg-id="cytavision-sports-3-cyprus" tvg-name="Cytavision Sports 3 Cyprus" group-title="CY",Cytavision Sports 3 Cyprus
