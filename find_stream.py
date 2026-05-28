@@ -28,20 +28,16 @@ def get_final_stream_url(initial_url: str) -> str:
     final_url = resp.url
     content_type = resp.headers.get("Content-Type", "").lower()
 
-    # Gelen cevap bir playlist mi?
     if "mpegurl" in content_type or final_url.endswith(".m3u8"):
         lines = resp.text.splitlines()
         for i, line in enumerate(lines):
             if line.startswith("#EXT-X-STREAM-INF"):
-                # Sonraki satırda boş olmayan, '#' ile başlamayan URI'yi ara
                 for j in range(i + 1, len(lines)):
                     candidate = lines[j].strip()
                     if candidate and not candidate.startswith("#"):
                         return urljoin(final_url, candidate)
-        # Master playlist değil, doğrudan bu adres geçerli
         return final_url
     else:
-        # HTML veya başka bir içerik döndüyse son URL'yi döndür (genellikle hata)
         return final_url
 
 def main():
