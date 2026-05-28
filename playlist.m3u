@@ -483,8 +483,8 @@ https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzMDUiLCJ0cy
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzMDYiLCJ0cyI6MTc3OTk4Mjk4MTIwMH0=
 #EXTINF:-1 tvg-id="bravo-usa" tvg-name="Bravo USA" group-title="US",Bravo USA
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzMDciLCJ0cyI6MTc3OTk4Mjk4MjIwMH0=
-#EXTINF:-1 tvg-id="bbc-news-channel-hd" tvg-name="BBC News Channel HD" group-title="GB",BBC News Channel HD cache
-https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzNDkiLCJ0cyI6MTc3OTk4Mjk4MzIwMH0=cache=false
+#EXTINF:-1 tvg-id="bbc-news-channel-hd" tvg-name="BBC News Channel HD" group-title="GB",BBC News Channel HD low
+https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzNDkiLCJ0cyI6MTc3OTk4Mjk4MzIwMH0=&low_latency=true
 #EXTINF:-1 tvg-id="bbc-one-uk" tvg-name="BBC One UK" group-title="GB",BBC One UK
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiIzNTYiLCJ0cyI6MTc3OTk4Mjk4NDIwMX0=
 #EXTINF:-1 tvg-id="bbc-two-uk" tvg-name="BBC Two UK" group-title="GB",BBC Two UK
