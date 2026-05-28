@@ -15,7 +15,7 @@ import os
 from urllib.parse import urljoin
 
 # Kanal bilgisi sabiti
-CHANNEL_EXTINF = '#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/6/68/Tv8_Yeni_Logo.png" group-title="TR Spor",Tivibu Spor'
+CHANNEL_EXTINF = '#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/3/36/Tivibu_spor_logosu.jpg" group-title="TR Spor",Tivibu Spor'
 CHANNEL_NAME = "Tivibu Spor"  # Eşleşme için kullanılacak isim
 
 def get_final_stream_url(initial_url: str) -> str:
