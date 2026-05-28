@@ -1,38 +1,46 @@
-name: M3U8 Otomatik Güncelleyici
+name: tivibu Canlı Yayın Adresini Güncelle
 
 on:
   schedule:
-    - cron: '*/55 * * * *'
-  workflow_dispatch:
-
-permissions:
-  contents: write
+    # Her gün 06:00 ve 18:00 UTC'de çalışır (isteğe göre ayarlayın)
+    - cron: '0 6,18 * * *'
+  workflow_dispatch:   # Manuel tetikleme için
 
 jobs:
-  update-m3u8:
+  update-stream:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # Commit atabilmek için
 
     steps:
-      - name: 📥 Repo Klonla
+      - name: Depoyu klonla
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 🐍 Python Kur
+      - name: Python kurulumu
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
-      - name: 📦 Kütüphaneleri Yükle
+      - name: Bağımlılıkları yükle
         run: pip install requests
 
-      - name: 🔄 M3U8 Güncelle
-        run: python m3u8_updater.py
-
-      - name: 📤 Değişiklikleri Kaydet
+      - name: Güncel yayın adresini al
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add tivibu.m3u8
-          git diff --staged --quiet || git commit -m "🔄 M3U8 güncellendi - $(date +'%Y-%m-%d %H:%M:%S')"
-          git push
+          python find_stream.py \
+            "https://streams.uzunmuhalefet.com/stream/e47153e0-42fe-4980-8570-e840d1cc1cf4.m3u8" \
+            "stream_url.m3u8"
+
+      - name: Değişiklikleri commit et ve pushla
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add stream_url.m3u8
+          # Yalnızca gerçekten değişiklik varsa commit yap
+          if git diff --cached --quiet; then
+            echo "Herhangi bir değişiklik yok."
+          else
+            git commit -m "Otomatik güncelleme: yeni yayın adresi [skip ci]"
+            git push
+          fi
