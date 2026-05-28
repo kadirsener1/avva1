@@ -1,3 +1,3 @@
 #EXTM3U
-#EXTINF:-1,TiviBuspor (KAPALI)
-http://0.0.0.0/offline.m3u8
+#EXTINF:-1 tvg-id="TivibuSpor" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/d/d2/Tivibu_Spor_logo.png", Tivibu Spor
+https://streams.uzunmuhalefet.com/stream/e47153e0-42fe-4980-8570-e840d1cc1cf4.m3u8
