@@ -1,13 +1,20 @@
 """
-Verilen ilk m3u8 adresinden nihai yayın linkini çözer ve bir dosyaya yazar.
+Verilen ilk m3u8 adresinden nihai yayın linkini çözer ve
+belirtilen formatta bir M3U playlist dosyası oluşturur.
+
 Kullanım:
     python find_stream.py <ilk_m3u8_url> [çıktı_dosyası]
-Varsayılan çıktı: sonuc.m3u8
+
+Varsayılan çıktı: playlist.m3u
 """
 
 import sys
 import requests
 from urllib.parse import urljoin
+
+# Sabit playlist başlık bilgileri
+PLAYLIST_HEADER = "#EXTM3U\n"
+CHANNEL_INFO = '#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/tr/3/36/Tivibu_spor_logosu.jpg" group-title="TR Spor",Tivibu Spor\n'
 
 def get_final_stream_url(initial_url: str) -> str:
     """
@@ -46,15 +53,18 @@ def main():
         sys.exit(1)
 
     url = sys.argv[1]
-    output_file = sys.argv[2] if len(sys.argv) > 2 else "sonuc.m3u8"
+    output_file = sys.argv[2] if len(sys.argv) > 2 else "playlist.m3u"
 
     final_url = get_final_stream_url(url)
 
-    with open(output_file, "w", encoding="utf-8") as f:
-        f.write(final_url)
+    # M3U playlist içeriğini oluştur
+    playlist_content = PLAYLIST_HEADER + CHANNEL_INFO + final_url
 
-    print(f"Nihai yayın adresi '{output_file}' dosyasına yazıldı:")
-    print(final_url)
+    with open(output_file, "w", encoding="utf-8") as f:
+        f.write(playlist_content)
+
+    print(f"Playlist dosyası '{output_file}' oluşturuldu:")
+    print(playlist_content)
 
 if __name__ == "__main__":
     main()
