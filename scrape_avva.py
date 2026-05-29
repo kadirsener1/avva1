@@ -8,6 +8,7 @@ from datetime import datetime
 # AYARLAR
 # ============================================================
 
+# Kaynaklar: URL veya yerel dosya yolu
 SOURCE_URLS = [
     "https://raw.githubusercontent.com/kadirsener1/VAVOO/refs/heads/main/ozel_listem.m3u",
     "m3u/trspor.m3u",
@@ -33,6 +34,23 @@ GITHUB_BRANCH = "main"
 
 # Geçici yerel dosya
 LOCAL_FILE = "playlist_temp.m3u"
+
+
+# ============================================================
+# KAYNAK OKUMA
+# ============================================================
+
+def load_source_content(source):
+    """Kaynağı URL ise requests ile, yerel dosya ise diskten oku."""
+    if source.startswith("http://") or source.startswith("https://"):
+        resp = requests.get(source, timeout=15)
+        resp.raise_for_status()
+        return resp.text
+    else:
+        if not os.path.exists(source):
+            raise FileNotFoundError(f"Yerel dosya bulunamadı: {source}")
+        with open(source, "r", encoding="utf-8") as f:
+            return f.read()
 
 
 # ============================================================
@@ -101,7 +119,7 @@ def github_write(content, sha=None):
 
 def m3u_parse(content):
     """M3U içeriğini kanal listesine parse eder."""
-    channels    = []
+    channels     = []
     current_meta = []
 
     for line in content.splitlines():
@@ -157,6 +175,14 @@ def stage1_merge_sources():
     print("📋 AŞAMA 1: M3U Kaynakları Birleştirme / Link Güncelleme")
     print("=" * 60)
 
+    # Yerel dosya kontrolü (debug)
+    print("\n📂 Yerel dosya kontrolü:")
+    for source in SOURCE_URLS:
+        if not source.startswith("http"):
+            durumu = "✅ VAR" if os.path.exists(source) else "❌ YOK"
+            print(f"  {source}: {durumu}")
+    print()
+
     # GitHub'dan oku
     existing_content, sha = github_read()
 
@@ -168,23 +194,20 @@ def stage1_merge_sources():
         existing_channels = m3u_parse(existing_content)
         print(f"Mevcut {len(existing_channels)} kanal yüklendi.")
 
-        existing_names          = set(ch['name'] for ch in existing_channels)
-        source_links            = {}
-        new_channels_to_add     = []
-        new_names_added         = set()
+        existing_names      = set(ch['name'] for ch in existing_channels)
+        source_links        = {}
+        new_channels_to_add = []
+        new_names_added     = set()
 
-        for url in SOURCE_URLS:
-            print(f"Kaynak çekiliyor: {url}")
+        for source in SOURCE_URLS:
+            print(f"Kaynak çekiliyor: {source}")
             try:
-                resp = requests.get(url, timeout=15)
-                resp.raise_for_status()
-                channels = m3u_parse(resp.text)
+                content  = load_source_content(source)
+                channels = m3u_parse(content)
                 print(f"  {len(channels)} kanal tarandı.")
                 for ch in channels:
-                    # Link güncelleme sözlüğü (son kaynak kazanır)
                     source_links[ch['name']] = ch
 
-                    # Yeni kanal mı?
                     if ch['name'] not in existing_names and \
                        ch['name'] not in new_names_added:
                         new_channels_to_add.append(ch)
@@ -220,15 +243,14 @@ def stage1_merge_sources():
         # DOSYA YOK → Sıfırdan oluştur
         # ------------------------------------------------------------
         print("Playlist bulunamadı. Sıfırdan oluşturuluyor...")
-        all_channels = []
+        all_channels  = []
         seen_channels = {}
 
-        for url in SOURCE_URLS:
-            print(f"Kaynak çekiliyor: {url}")
+        for source in SOURCE_URLS:
+            print(f"Kaynak çekiliyor: {source}")
             try:
-                resp = requests.get(url, timeout=15)
-                resp.raise_for_status()
-                channels = m3u_parse(resp.text)
+                content  = load_source_content(source)
+                channels = m3u_parse(content)
                 print(f"  {len(channels)} kanal bulundu.")
                 for ch in channels:
                     name = ch['name']
@@ -236,7 +258,6 @@ def stage1_merge_sources():
                         all_channels.append(ch)
                         seen_channels[name] = len(all_channels) - 1
                     else:
-                        # Tekrar eden kanalda sadece link güncelle
                         all_channels[seen_channels[name]]['url'] = ch['url']
             except Exception as e:
                 print(f"  HATA: {e}")
@@ -283,7 +304,6 @@ def get_fresh_links():
         url  = ch.get("m3u8_url", "")
         if name and url:
             link_map[name] = url
-            # Slug ile de eşleşebilsin
             slug_match = re.search(r'avvaupdate\.com/([^/]+)/', url)
             if slug_match:
                 link_map[slug_match.group(1).lower()] = url
