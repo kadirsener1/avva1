@@ -1,4 +1,6 @@
 #EXTM3U
+#EXTINF:-1 tvg-id="bein-sports-1-turkey" tvg-name="beIN Sports 1 Turkey" group-title="Spor",beIN Sports 1 vavoo
+https://asaf34.umitm0d.workers.dev/play/1363827223a1c98515d612
 #EXTINF:-1 tvg-id="bein-sports-1-turkey" tvg-name="beIN Sports 1 Turkey" group-title="Spor",beIN Sports 1 Turkey
 https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI2MiIsInRzIjoxNzc5OTY4MDg5NjQ1fQ==
 #EXTINF:-1 tvg-id="bein-sports-2-turkey" tvg-name="beIN Sports 2 Turkey" group-title="Spor",beIN Sports 2 Turkey
