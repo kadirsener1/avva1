@@ -28,7 +28,7 @@ API_HEADERS = {
 }
 
 # Çıkış dosyası
-M3U_FILE = "playlist.m3u"
+M3U_FILE = "https://raw.githubusercontent.com/kadirsener1/avva/refs/heads/main/playlist.m3u"
 
 
 # ============================================================
