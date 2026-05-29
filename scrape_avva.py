@@ -10,11 +10,11 @@ from datetime import datetime
 
 SOURCE_URLS = [
     "https://raw.githubusercontent.com/kadirsener1/VAVOO/refs/heads/main/ozel_listem.m3u",
-    "https://raw.githubusercontent.com/kadirsener1/avva1/refs/heads/main/m3u/trspor.m3u",
+    "m3u/trspor.m3u",
     "https://raw.githubusercontent.com/kadirsener1/247/refs/heads/main/tv247.m3u",
-    "https://raw.githubusercontent.com/kadirsener1/avva1/refs/heads/main/m3u/ulusal.m3u",
-    "https://raw.githubusercontent.com/kadirsener1/avva1/refs/heads/main/m3u/haber.m3u",
-    "https://raw.githubusercontent.com/kadirsener1/avva1/refs/heads/main/m3u/cocuk.m3u",
+    "m3u/ulusal.m3u",
+    "m3u/haber.m3u",
+    "m3u/cocuk.m3u",
 ]
 
 # Avva API
