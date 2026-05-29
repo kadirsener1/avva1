@@ -289,8 +289,7 @@ https://tv-e-okul01.medya.trt.com.tr/master.m3u8
 http://65.108.239.207:80/cartoonnetwork/index.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/CYTEuoR.png" group-title="TR Spor",A Spor-2
 https://zeus324232.cfd/xaspor/index.m3u8
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/78/Atv_logosu.png" group-title="Ulusal",ATV-2
-https://zeus324232.cfd/xatv/index.m3u8
+
 #EXTINF:-1 group-title="Vavoo Spor" tvg-logo="https://raw.githubusercontent.com/kadirsener1/logolar/refs/heads/master/kanallogolari/beIN-SPORTS-1-HD.png" tvg-id="beinsportsmax2.tr",S SPORT 2
 https://vavooproxy.magnitude.workers.dev/resolve?url=https://vavoo.to/vavoo-iptv/play/1234604880d226de6d47be
 #EXTINF:-1 tvg-id="arena-sport-1-serbia" tvg-name="Arena Sport 1 Serbia" group-title="World Sports",Arena Sport 1 Serbia
