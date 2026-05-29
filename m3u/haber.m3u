@@ -8,6 +8,7 @@ https://livetv.work/play/tr/ntv.php
 https://dogus.daioncdn.net/ntv/ntv.m3u8?app=7c4bb802-0c41-409e-8cd2-799984995694
 
 #EXTINF:-1 tvg-logo="https://vipotv.com/wp-content/uploads/2019/05/24tv.png" group-title="Haber",Cnn Türk
+http://cdn.vizitv.workers.dev/12.m3u8
 
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/commons/7/78/Haberturk_logo.png" group-title="Haber",Haber  Türk
 https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/haberturktv/haberturktv_1080p.m3u8
@@ -17,7 +18,6 @@ https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/ahaber/ahaber_1080p.m3u8
 #EXTINF:-1 tvg-logo="https://i.hizliresim.com/qg6q0zx.png" group-title="Haber",Haber Global
 https://tv.ensonhaber.com/haberglobal/haberglobal_720p.m3u8
 
-
 #EXTINF:-1 tvg-logo="https://vipotv.com/wp-content/uploads/2019/05/24tv.png" group-title="Haber",Tv 100
 https://tv100.daioncdn.net/tv100/tv100_1080p.m3u8?app=web
 
@@ -25,7 +25,7 @@ https://tv100.daioncdn.net/tv100/tv100_1080p.m3u8?app=web
 https://turkmedya-live.ercdn.net/tv24/tv24_1080p.m3u8
 
 #EXTINF:-1 tvg-logo="https://vipotv.com/wp-content/uploads/2019/05/24tv.png" group-title="Haber",Tvnet
-
+https://tvnet-live.lg.mncdn.com/tvnet/tvnet/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://vipotv.com/wp-content/uploads/2019/05/24tv.png" group-title="Haber",Ülke Tv
 https://livetv.radyotvonline.net/kanal7live/ulketv/playlist.m3u8
 
@@ -33,7 +33,7 @@ https://livetv.radyotvonline.net/kanal7live/ulketv/playlist.m3u8
 https://tgrthaber-live.daioncdn.net/tgrthaber/tgrthaber_1080p.m3u8
 
 #EXTINF:-1 tvg-logo="https://vipotv.com/wp-content/uploads/2019/05/24tv.png" group-title="Haber",Akit Tv
-
+http://cdn.vizitv.workers.dev/56.m3u8
 #EXTINF:-1 tvg-logo="https://vipotv.com/wp-content/uploads/2019/05/24tv.png" group-title="Haber",Sözcü
 https://helga.iptv2022.com/sh/szc_tv/tracks-v4a1/mono.ts.m3u8?filter.tracks=a1v1v2v3v4
 
@@ -59,7 +59,7 @@ https://flashhaber-live.ercdn.net/flashhaber/flashhaber_1080p.m3u8
 https://tv.ensonhaber.com/benguturk/benguturk.m3u8
 
 #EXTINF:-1 tvg-logo="https://vipotv.com/wp-content/uploads/2019/05/24tv.png" group-title="Haber",GZT Tv
-https://tv.ensonhaber.com/benguturk/benguturk.m3u8
+https://gzttv-live.lg.mncdn.com/gzttv/gzttv/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://vipotv.com/wp-content/uploads/2019/05/24tv.png" group-title="Haber",İlke Tv
 https://stream.ilketv.com.tr/hls/ilkecanli.m3u8
