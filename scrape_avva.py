@@ -11,11 +11,11 @@ from datetime import datetime
 # Kaynaklar: URL veya yerel dosya yolu
 SOURCE_URLS = [
     "https://raw.githubusercontent.com/kadirsener1/VAVOO/refs/heads/main/ozel_listem.m3u",
-    "m3u/trspor.m3u",
     "https://raw.githubusercontent.com/kadirsener1/247/refs/heads/main/tv247.m3u",
     "m3u/ulusal.m3u",
     "m3u/haber.m3u",
     "m3u/cocuk.m3u",
+     "m3u/trspor.m3u",
 ]
 
 # Avva API
