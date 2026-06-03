@@ -1,0 +1,37 @@
+name: Youtube Güncelleyici
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'YouTube/channels.txt'
+
+permissions:
+  contents: write          # Depoya yazma izni
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Depoyu klonla
+        uses: actions/checkout@v4
+
+      - name: Python kurulumu
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Bağımlılıkları yükle
+        run: pip install requests
+
+      - name: M3U dosyasını oluştur
+        run: python generate_m3u.py
+
+      - name: Değişiklikleri commit et
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add playlist.m3u
+          git diff --staged --quiet || (git commit -m "📡 M3U güncellendi" && git push)
