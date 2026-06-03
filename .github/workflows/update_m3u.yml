@@ -27,7 +27,7 @@ jobs:
         run: pip install requests
 
       - name: M3U dosyasını oluştur
-        run: python Youtube/generate_m3u.py
+        run: python YouTube/generate_m3u.py
 
       - name: Değişiklikleri commit et
         run: |
