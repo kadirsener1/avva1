@@ -2,7 +2,7 @@ import re
 import requests
 
 # Kanal listesini oku
-with open("channels.txt", "r", encoding="utf-8") as f:
+with open("YouTube/channels.txt", "r", encoding="utf-8") as f:
     raw_lines = [line.strip() for line in f if line.strip()]
 
 # ytdlp.online üzerinden session al
@@ -93,7 +93,7 @@ for line in raw_lines:
         print(f"❌ {name} ({channel_id}) → hata: {e}")
 
 # Dosyaya yaz
-with open("playlist.m3u", "w", encoding="utf-8") as f:
+with open("YouTube/playlist.m3u", "w", encoding="utf-8") as f:
     f.write("\n".join(playlist_lines))
 
 print(f"\n🎯 Toplam {len(raw_lines)} kanaldan {success} tanesi canlı, playlist.m3u oluşturuldu.")
