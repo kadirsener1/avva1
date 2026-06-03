@@ -16,6 +16,7 @@ SOURCE_URLS = [
     "m3u/haber.m3u",
     "m3u/cocuk.m3u",
      "m3u/trspor.m3u",
+    "YouTube/playlist.m3u",
 ]
 
 # Avva API
