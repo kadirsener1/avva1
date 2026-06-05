@@ -29,9 +29,9 @@ jobs:
       - name: M3U dosyasını oluştur
         run: python YouTube/generate_m3u.py
 
-- name: Değişiklikleri commit et
-  run: |
-    git config user.name "github-actions"
-    git config user.email "actions@github.com"
-    git add playlist.m3u
-    git diff --staged --quiet || (git commit -m "📡 M3U güncellendi" && git push)
+ - name: Değişiklikleri commit et
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add playlist.m3u
+          git diff --staged --quiet || (git commit -m "📡 M3U güncellendi" && git push)
