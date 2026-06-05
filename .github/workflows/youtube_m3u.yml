@@ -10,16 +10,24 @@ on:
       - 'YouTube/generate_m3u.py'
       - '.github/workflows/youtube_m3u.yml'
 
-permissions:
-  contents: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Depoyu klonla
+      - name: Kaynak repo (avva1) klonla
         uses: actions/checkout@v4
+        with:
+          path: source
+          persist-credentials: false
+
+      - name: Hedef repo (avva) klonla
+        uses: actions/checkout@v4
+        with:
+          repository: kadirsener1/avva
+          ref: main
+          token: ${{ secrets.AVVA_TOKEN }}
+          path: target
 
       - name: Python kurulumu
         uses: actions/setup-python@v5
@@ -29,10 +37,16 @@ jobs:
       - name: Bağımlılıkları yükle
         run: pip install requests
 
-      - name: M3U dosyasını güncelle
+      - name: M3U dosyasını üret ve avva repo içine yaz
+        working-directory: source
+        env:
+          CHANNELS_FILE: YouTube/channels.txt
+          PLAYLIST_FILE: ../target/playlist.m3u
+          PLAYLIST_SOURCE_URL: https://raw.githubusercontent.com/kadirsener1/avva/main/playlist.m3u
         run: python YouTube/generate_m3u.py
 
-      - name: Değişiklikleri commit et
+      - name: Değişiklikleri avva repo'suna commit et
+        working-directory: target
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
@@ -41,5 +55,5 @@ jobs:
             echo "Değişiklik yok"
           else
             git commit -m "playlist.m3u güncellendi"
-            git push
+            git push origin main
           fi
