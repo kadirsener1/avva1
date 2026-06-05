@@ -4,13 +4,13 @@ import html
 import unicodedata
 import requests
 
-CHANNELS_FILE = "YouTube/channels.txt"
-PLAYLIST_FILE = "playlist.m3u"
+CHANNELS_FILE = os.getenv("CHANNELS_FILE", "YouTube/channels.txt")
+PLAYLIST_FILE = os.getenv("PLAYLIST_FILE", "playlist.m3u")
 
-# Önce senin verdiğin hedef liste okunur, sonra güncellenmiş hali repo kökündeki playlist.m3u'ya yazılır.
+# Hedef playlist kaynağı olarak avva repo kullanılır
 PLAYLIST_SOURCE_URLS = [
+    os.getenv("PLAYLIST_SOURCE_URL", "https://raw.githubusercontent.com/kadirsener1/avva/main/playlist.m3u"),
     "https://raw.githubusercontent.com/kadirsener1/avva/refs/heads/main/playlist.m3u",
-    "https://raw.githubusercontent.com/kadirsener1/avva/main/playlist.m3u",
 ]
 
 HEADERS = {
@@ -43,10 +43,6 @@ def compact_key(text: str) -> str:
 
 
 def alias_keys(text: str) -> set:
-    """
-    Bir kanal adı için farklı eşleşme anahtarları üretir.
-    Amaç: listedeki isim biraz farklı yazılsa da bulunabilsin.
-    """
     base = compact_key(text)
     keys = set()
 
@@ -55,17 +51,14 @@ def alias_keys(text: str) -> set:
 
     keys.add(base)
 
-    # YouTube/ytube/live/canli gibi ekleri çıkarmış daha gevşek anahtarlar
     stripped = base
-    for token in ["youtube", "ytube", "live", "canli", "canlı"]:
+    for token in ["youtube", "ytube", "live", "canli"]:
         stripped = stripped.replace(token, "")
-    stripped = re.sub(r"\s+", "", stripped)
 
     if stripped and len(stripped) >= 3:
         keys.add(stripped)
 
-    # Sondaki tekrar eden ekleri de kırp
-    stripped2 = re.sub(r"(youtube|ytube|live|canli|canlı)+$", "", base)
+    stripped2 = re.sub(r"(youtube|ytube|live|canli)+$", "", base)
     if stripped2 and len(stripped2) >= 3:
         keys.add(stripped2)
 
@@ -73,12 +66,23 @@ def alias_keys(text: str) -> set:
 
 
 def extract_attr(extinf_line: str, attr_name: str) -> str:
-    m = re.search(rf'{re.escape(attr_name)}="([^"]*)"', extinf_line, re.IGNORECASE)
-    return m.group(1).strip() if m else ""
+    match = re.search(rf'{re.escape(attr_name)}="([^"]*)"', extinf_line, re.IGNORECASE)
+    return match.group(1).strip() if match else ""
 
 
 def load_target_playlist():
-    # Önce hedef raw listeyi almayı dene
+    # Önce yerelde hedef repo içindeki playlist varsa onu kullan
+    if os.path.exists(PLAYLIST_FILE):
+        with open(PLAYLIST_FILE, "r", encoding="utf-8") as f:
+            lines = [line.rstrip("\n") for line in f]
+
+        if not lines or not lines[0].startswith("#EXTM3U"):
+            lines.insert(0, "#EXTM3U")
+
+        print(f"📂 Yerel hedef playlist kullanıldı: {PLAYLIST_FILE}")
+        return lines
+
+    # Yerelde yoksa raw URL'den al
     for url in PLAYLIST_SOURCE_URLS:
         try:
             resp = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=20)
@@ -91,28 +95,11 @@ def load_target_playlist():
         except Exception as e:
             print(f"⚠️ Raw playlist alınamadı: {url} -> {e}")
 
-    # Raw alınamazsa yerel dosyadan devam et
-    if os.path.exists(PLAYLIST_FILE):
-        with open(PLAYLIST_FILE, "r", encoding="utf-8") as f:
-            lines = [line.rstrip("\n") for line in f]
-        if not lines or not lines[0].startswith("#EXTM3U"):
-            lines.insert(0, "#EXTM3U")
-        print(f"📂 Yerel playlist kullanıldı: {PLAYLIST_FILE}")
-        return lines
-
-    print("⚠️ Hiç playlist bulunamadı, yeni liste başlatılıyor.")
+    print("⚠️ Hedef playlist bulunamadı, yeni liste başlatılıyor.")
     return ["#EXTM3U"]
 
 
 def build_playlist_entries(lines):
-    """
-    Playlist içindeki kanalları okuyup index oluşturur.
-    Eşleştirme için:
-    - görünür kanal adı (virgülden sonrası)
-    - tvg-name
-    - tvg-id
-    kullanılır.
-    """
     entries = []
     key_index = {}
 
@@ -184,7 +171,6 @@ def to_youtube_url(channel: str) -> str:
 
 def to_mobile_live_url(channel: str) -> str:
     url = to_youtube_url(channel)
-
     url = re.sub(r"^https?://(www\.)?youtube\.com", "https://m.youtube.com", url)
     url = re.sub(r"^https?://youtu\.be", "https://m.youtube.com", url)
 
@@ -229,9 +215,9 @@ def get_ytdlp_session():
             return session_cookie
 
         set_cookie = home_resp.headers.get("set-cookie", "")
-        m = re.search(r"session=([^;]+)", set_cookie)
-        if m:
-            return m.group(1)
+        match = re.search(r"session=([^;]+)", set_cookie)
+        if match:
+            return match.group(1)
 
     except Exception as e:
         print(f"Session alınamadı: {e}")
@@ -240,10 +226,6 @@ def get_ytdlp_session():
 
 
 def find_playlist_entry(candidate_names, entries, key_index):
-    """
-    Önce exact/alias eşleşme,
-    sonra tekil fuzzy eşleşme dener.
-    """
     tried_keys = set()
     direct_hits = set()
 
@@ -295,19 +277,16 @@ def get_manifest_url(channel: str, session_cookie: str):
     resp = requests.get(api_url, headers=stream_headers, timeout=30)
     text = resp.text
 
-    m = re.search(r"""https://manifest\.googlevideo\.com/[^\s"'<>\\]+""", text)
-    return m.group(0) if m else None
+    match = re.search(r'https://manifest\.googlevideo\.com/[^\s"\'<>\\]+', text)
+    return match.group(0) if match else None
 
 
-# channels.txt oku
 with open(CHANNELS_FILE, "r", encoding="utf-8") as f:
     raw_lines = [line.strip() for line in f if line.strip()]
 
-# hedef playlist'i yükle
 playlist_lines = load_target_playlist()
 entries, key_index = build_playlist_entries(playlist_lines)
 
-# session al
 session_cookie = get_ytdlp_session()
 if not session_cookie:
     print("Session bulunamadı, çıkılıyor.")
@@ -329,7 +308,6 @@ for raw_line in raw_lines:
     if yt_title and compact_key(yt_title) not in {compact_key(x) for x in candidate_names}:
         candidate_names.append(yt_title)
 
-    # Hiç isim yoksa son çare olarak URL son parçasını da dene
     fallback_name = channel.rstrip("/").split("/")[-1]
     if fallback_name and compact_key(fallback_name) not in {compact_key(x) for x in candidate_names}:
         candidate_names.append(fallback_name)
@@ -339,7 +317,7 @@ for raw_line in raw_lines:
     if entry_idx is None:
         skipped += 1
         shown = " / ".join(candidate_names) if candidate_names else channel
-        print(f"⏭️ {shown} → playlist.m3u içinde bulunamadı, dokunulmadı")
+        print(f"⏭️ {shown} → playlist içinde bulunamadı, dokunulmadı")
         continue
 
     entry = entries[entry_idx]
@@ -367,7 +345,9 @@ for raw_line in raw_lines:
         errors += 1
         print(f"❌ {playlist_name} → hata: {e}")
 
-# kök dizine yaz
+output_dir = os.path.dirname(os.path.abspath(PLAYLIST_FILE))
+os.makedirs(output_dir, exist_ok=True)
+
 with open(PLAYLIST_FILE, "w", encoding="utf-8") as f:
     f.write("\n".join(playlist_lines) + "\n")
 
