@@ -1,8 +1,6 @@
 #EXTM3U
 #EXTINF:-1 tvg-logo="https://i.imgur.com/VWygoj9.png" group-title="TR Spor",Trt Spor
 https://tv-trtspor1.medya.trt.com.tr/master_1080.m3u8
-#EXTINF:-1 tvg-logo="https://i.imgur.com/UGbdQLv.png" group-title="TR Spor",beIN Sports Haber-YTB
-https://youtube.magnitude.workers.dev/UCPe9vNjHF1kEExT5kHwc7aw.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/UGbdQLv.png" group-title="TR Spor",beIN Sports Haber
 https://netspor.tecostream.xyz/bsh.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/ZhkZzLf.png" group-title="TR Spor",A Spor
