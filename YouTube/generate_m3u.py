@@ -3,7 +3,7 @@ import re
 import requests
 
 CHANNELS_FILE = "YouTube/channels.txt"
-PLAYLIST_FILE = "playlist.m3u"   # Kök dizindeki dosya güncellenecek
+PLAYLIST_FILE = "https://raw.githubusercontent.com/kadirsener1/avva/refs/heads/main/playlist.m3u"   # Kök dizindeki dosya güncellenecek
 APPEND_IF_NOT_FOUND = False      # Listede yoksa ekleme, sadece mevcut linki güncelle
 
 
