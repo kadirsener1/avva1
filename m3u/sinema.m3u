@@ -1,4 +1,18 @@
 #EXTM3U
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Sinema",SİNEMA AKSİYON 2
+http://vipru.linetv.net:8004/stream/YWxhZHlufHxSMkZpY25sek1qQXhNQT09/7005/index.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Sinema",SİNEMA 1001
+http://vipru.linetv.net:8004/stream/YWxhZHlufHxSMkZpY25sek1qQXhNQT09/7001/index.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Sinema",SİNEMA 1002
+http://vipru.linetv.net:8004/stream/YWxhZHlufHxSMkZpY25sek1qQXhNQT09/7002/index.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Sinema",SİNEMA AİLE
+http://vipru.linetv.net:8004/stream/YWxhZHlufHxSMkZpY25sek1qQXhNQT09/7004/index.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Sinema",SİNEMA AİLE 2
+http://vipru.linetv.net:8004/stream/YWxhZHlufHxSMkZpY25sek1qQXhNQT09/7003/index.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Sinema",SİNEMA KOMEDİ
+http://vipru.linetv.net:8004/stream/YWxhZHlufHxSMkZpY25sek1qQXhNQT09/7007/index.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Sinema",SİNEMA KOMEDİ 2
+http://vipru.linetv.net:8004/stream/YWxhZHlufHxSMkZpY25sek1qQXhNQT09/7006/index.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Sinema",BEİN MOVİES ACTION
 http://vipru.linetv.net:8004/stream/YWxhZHlufHxSMkZpY25sek1qQXhNQT09/6951/index.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Sinema",BEİN MOVİES ACTION 2
@@ -21,6 +35,8 @@ http://vipru.linetv.net:8004/stream/YWxhZHlufHxSMkZpY25sek1qQXhNQT09/6971/index.
 https://saran-live.ercdn.net/fx/index.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Sinema",TABİİ TV
 https://ceokzokgtd.erbvr.com/tabiitv/tabiitv.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Sinema",MOVİE SMART TÜRK
+http://vipru.linetv.net:8004/stream/YWxhZHlufHxSMkZpY25sek1qQXhNQT09/6994/index.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Sinema",DİZİ SMART MAX
 http://vipru.linetv.net:8004/stream/YWxhZHlufHxSMkZpY25sek1qQXhNQT09/6976/index.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Sinema",SDM TV
