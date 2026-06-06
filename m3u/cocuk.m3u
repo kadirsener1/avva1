@@ -9,6 +9,8 @@ https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago_cocuk/minikago_cocuk.m3
 https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago/minikago.m3u8
 #EXTINF:-1 tvg-id="127" tvg-logo="https://feo.kablowebtv.com/resize/168A635D265A4328C2883FB4CD8FF/0/0/Vod/HLS/51d3a383-2842-4a4c-b622-20f09b309973.png" group-title="Çocuk",Disney Junior
 https://saran-live.ercdn.net/disneyjunior/index.m3u8
+#EXTINF:-1 tvg-id="minikago" tvg-logo="https://img.dsmartgo.com.tr/content/I/WS/13404/Thumbnail.png" tvg-name="Minika Go" group-title="Çocuk",Çocuk Smart
+http://vipru.linetv.net:8004/stream/YWxhZHlufHxSMkZpY25sek1qQXhNQT09/6962/index.m3u8
 #EXTINF:-1 tvg-id="126" tvg-logo="https://feo.kablowebtv.com/resize/168A635D265A4328C2883FB4CD8FF/0/0/Vod/HLS/2442b7b7-04da-41c1-a7ca-03466853040e.png" group-title="Çocuk",Baby Tv
 https://saran-live.ercdn.net/babytv/index.m3u8
 #EXTINF:-1 tvg-id="137" tvg-logo="https://feo.kablowebtv.com/resize/168A635D265A4328C2883FB4CD8FF/0/0/Vod/HLS/47fcca43-c2ac-4ab8-ae92-2b007655be9f.png" group-title="Çocuk",TRT Eba TV
