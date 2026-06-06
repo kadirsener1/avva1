@@ -7,6 +7,8 @@ https://saran-live.ercdn.net/natgeowild/index.m3u8
 http://vipru.linetv.net:8004/stream/YWxhZHlufHxSMkZpY25sek1qQXhNQT09/6972/index.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",DISCOVERY-2
 https://65.108.239.207/discovery/index.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",ID
+http://vipru.linetv.net:8004/stream/YWxhZHlufHxSMkZpY25sek1qQXhNQT09/6973/index.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",TRT BELGESEL
 https://tv-trtbelgesel.medya.trt.com.tr/master_1080.m3u8
 
