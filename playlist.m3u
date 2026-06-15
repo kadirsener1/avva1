@@ -2125,7 +2125,7 @@ https://chat.cfbu247.sbs/api/proxy/playlist?token=eyJjaGFubmVsSWQiOiI1MjAiLCJ0cy
 #EXTINF:-1 tvg-logo="https://i.imgur.com/UGbdQLv.png" group-title="TR Spor",beIN Sports Haber-YTB
 https://youtube.magnitude.workers.dev/UCPe9vNjHF1kEExT5kHwc7aw.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/qBVqtYd.png" group-title="TR Spor",FB tv
-http://1hskrdto.rocketcdn.com/fenerbahcetv.smil/playlist.m3u8
+https://fbtv.fenerbahce.org/fenerbahcetv.stream/chunklist.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/3zHdkYG.png" group-title="TR Spor",Tjk Tv
 https://tjktv-live.tjk.org/tjktv.m3u8
 #EXTINF:-1 tvg-logo="https://i.imgur.com/3zHdkYG.png" group-title="TR Spor",Tjk Tv2
