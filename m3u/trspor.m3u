@@ -32,3 +32,5 @@ https://hnc-free-viewlift.amagi.tv/playlist720_p.m3u8
 https://lightning-tracesport-samsungau.amagi.tv/playlist.m3u8
 #EXTINF:-1 group-title="0.KIL-SP0R  MAÇ" tvg-logo="https://i.imgur.com/FabFP5A.png" tvg-id="Dummy" ,Trace Sports Stars
 https://trace-sportstars-samsungnz.amagi.tv/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://i.imgur.com/3zHdkYG.png" group-title="TR Spor",Fight Box
+http://iptv.prosto.tv:7000/ch118/video.m3u8
