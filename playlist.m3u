@@ -172,23 +172,23 @@ https://netspor.tecostream.xyz/exn7.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Spor-Kral",Exxen 8
 https://netspor.tecostream.xyz/exn8.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Spor-Atom",beIN Sports 1-Ron
-https://ronaldo.magnitude.workers.dev/?url=https://corestream.ronaldovurdu.help//bein1/tracks-v1a1/mono.m3u8
+https://live.weinformers.com/wp-admin/admin-ajax.php?action=ucs_proxy_m3u8&url=https://corestream.ronaldovurdu.help//bein1/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Spor-Atom" tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG",beIN Sports 2-R
-https://ronaldo.magnitude.workers.dev/?url=https://corestream.ronaldovurdu.help//bein2/tracks-v1a1/mono.m3u8
+https://live.weinformers.com/wp-admin/admin-ajax.php?action=ucs_proxy_m3u8&url=https://corestream.ronaldovurdu.help//bein2/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Spor-Atom" tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG",beIN Sports 3-R
-https://ronaldo.magnitude.workers.dev/?url=https://corestream.ronaldovurdu.help//bein3/tracks-v1a1/mono.m3u8
+https://live.weinformers.com/wp-admin/admin-ajax.php?action=ucs_proxy_m3u8&url=https://corestream.ronaldovurdu.help//bein3/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Spor-Atom" tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG",beIN Sports 4-R
-https://ronaldo.magnitude.workers.dev/?url=https://corestream.ronaldovurdu.help//bein4/tracks-v1a1/mono.m3u8
+https://live.weinformers.com/wp-admin/admin-ajax.php?action=ucs_proxy_m3u8&url=https://corestream.ronaldovurdu.help//bein4/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Spor-Atom" tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG",beIN Sports 5-R
-https://ronaldo.magnitude.workers.dev/?url=https://corestream.ronaldovurdu.help//bein5/tracks-v1a1/mono.m3u8
+https://live.weinformers.com/wp-admin/admin-ajax.php?action=ucs_proxy_m3u8&url=https://corestream.ronaldovurdu.help//bein5/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Spor-Atom" tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG",beIN Sports Max 1-R
-https://ronaldo.magnitude.workers.dev/?url=https://corestream.ronaldovurdu.help//hls/bein-sports-max-1.m3u8
+https://live.weinformers.com/wp-admin/admin-ajax.php?action=ucs_proxy_m3u8&url=https://corestream.ronaldovurdu.help//hls/bein-sports-max-1.m3u8
 #EXTINF:-1 group-title="Spor-Atom" tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG",beIN Sports Max 2-R
-https://ronaldo.magnitude.workers.dev/?url=https://corestream.ronaldovurdu.help//hls/bein-sports-max-2.m3u8
+https://live.weinformers.com/wp-admin/admin-ajax.php?action=ucs_proxy_m3u8&url=https://corestream.ronaldovurdu.help//hls/bein-sports-max-2.m3u8
 #EXTINF:-1 group-title="Spor-Atom" tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG",S Sport-R
-https://ronaldo.magnitude.workers.dev/?url=https://corestream.ronaldovurdu.help//s-sportt/tracks-v1a1/mono.m3u8
+https://live.weinformers.com/wp-admin/admin-ajax.php?action=ucs_proxy_m3u8&url=https://corestream.ronaldovurdu.help//s-sportt/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Spor-Atom" tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG",S Sport 2-R
-https://ronaldo.magnitude.workers.dev/?url=https://corestream.ronaldovurdu.help//s-sport2/tracks-v1a1/mono.m3u8
+https://live.weinformers.com/wp-admin/admin-ajax.php?action=ucs_proxy_m3u8&url=https://corestream.ronaldovurdu.help//s-sport2/tracks-v1a1/mono.m3u8
 #EXTINF:-1 group-title="Spor-Atom" tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG",A Spor-R
 https://worldradio.online/proxy/?q=https://corestream.ronaldovurdu.help//aspor/tracks-v1a1/mono.m3u8
 
