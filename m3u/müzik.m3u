@@ -55,8 +55,9 @@ https://b01c02nl.mediatriple.net/videoonlylive/mtkgeuihrlfwlive/u_stream_5c9e2ee
 
 
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Sinema",Fanatik Music Nostalji
-https://catcast.ismailturret.workers.dev/fanatikmusicnostalji.m3u8
+https://raw.githubusercontent.com/kadirsener1/catcast/refs/heads/main/catcast/fanatikmusicnostalji.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Sinema",Fanatik Music Rojda
+https://raw.githubusercontent.com/kadirsener1/catcast/refs/heads/main/catcast/fanatikmusicrojda.m3u8
 
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Sinema",Fanatik Music Neşet Ertaş
-https://catcast.ismailturret.workers.dev/fanatikmusicnesetertas.m3u8
-
+https://raw.githubusercontent.com/kadirsener1/catcast/refs/heads/main/catcast/fanatikmusicnesetertas.m3u8
