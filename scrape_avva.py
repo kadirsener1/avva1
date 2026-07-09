@@ -366,7 +366,7 @@ def stage2_avva_update():
                 new_url = new_url.replace("o=1&e", "o=1%26e")
                 new_url = new_url.replace("&", "%26")
                 # Worker prefix
-                new_url = "https://avva.magnitude.workers.dev/?url=" + new_url
+                new_url = "https://live.weinformers.com/wp-admin/admin-ajax.php?action=ucs_proxy_m3u8&url=" + new_url
                 new_lines.append(new_url + "\n")
                 updated += 1
                 print(f"  ✅ Güncellendi: {current_channel_name}")
