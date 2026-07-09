@@ -1,4 +1,4 @@
-name: Avva Sports Link Güncelle her saat
+name: Avva Sports Link Güncelle 2 saat
 
 on:
   schedule:
