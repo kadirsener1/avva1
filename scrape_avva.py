@@ -19,7 +19,7 @@ SOURCE_URLS = [
     "m3u/belgesel.m3u",
     "YouTube/playlist.m3u",
     "m3u/müzik.m3u",
-   
+   "https://raw.githubusercontent.com/kadirsener1/247/refs/heads/main/tv247.m3u",
 ]
 
 # Avva API
