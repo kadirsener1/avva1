@@ -21,7 +21,7 @@ SOURCE_URLS = [
     "m3u/müzik.m3u",
    "https://raw.githubusercontent.com/kadirsener1/atom/refs/heads/main/atom.m3u",
    "https://raw.githubusercontent.com/kadirsener1/247/refs/heads/main/tv247.m3u",
-"https://de1.api.radio-browser.info/m3u/stations/search?limit=1000&countrycode=TR&hidebroken=true&order=name&reverse=false",
+
 ]
 
 # Avva API
