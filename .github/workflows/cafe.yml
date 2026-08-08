@@ -28,7 +28,7 @@ jobs:
           pip install -U setuptools wheel Kekik httpx parsel requests
           
       - name: selcuk.py Çalıştır
-        run: python cafe.py
+        run: python cafe/cafe.py
 
       
       - name: Değişiklik Kontrolü
