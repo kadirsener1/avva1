@@ -33,7 +33,7 @@ https://livetv.radyotvonline.net/kanal7live/ulketv/playlist.m3u8
 https://tgrthaber-live.daioncdn.net/tgrthaber/tgrthaber_1080p.m3u8
 
 #EXTINF:-1 tvg-logo="https://vipotv.com/wp-content/uploads/2019/05/24tv.png" group-title="Haber",Akit Tv
-http://cdn.vizitv.workers.dev/56.m3u8
+http://taliptv01.xyz:8080/play/live.php?mac=00:1A:79:4D:06:6C&stream=594236&extension=ts
 #EXTINF:-1 tvg-logo="https://vipotv.com/wp-content/uploads/2019/05/24tv.png" group-title="Haber",Sözcü-03
 https://trn03.tulix.tv/gt-sozcu-livetv/index.m3u8?token=b9b136447f039cce5dab614e0d25c5e7
 
