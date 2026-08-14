@@ -19,7 +19,7 @@ https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/ahaber/ahaber_1080p.m3u8
 https://tv.ensonhaber.com/haberglobal/haberglobal_720p.m3u8
 
 #EXTINF:-1 tvg-logo="https://vipotv.com/wp-content/uploads/2019/05/24tv.png" group-title="Haber",Tv 100
-https://tv100.daioncdn.net/tv100/tv100_1080p.m3u8?app=web
+https://tv.ensonhaber.com/tv100/tv100_1080p.m3u8
 
 #EXTINF:-1 tvg-logo="https://vipotv.com/wp-content/uploads/2019/05/24tv.png" group-title="Haber",24 TV
 https://turkmedya-live.ercdn.net/tv24/tv24_1080p.m3u8
