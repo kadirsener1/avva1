@@ -20,10 +20,9 @@ SOURCE_URLS = [
     "m3u/sinema.m3u",
    "m3u/belgesel.m3u",
     "m3u/cocuk.m3u",
-    
     "YouTube/playlist.m3u",
     "m3u/müzik.m3u",
-   
+   "m3u/radyo.m3u",
 
 ]
 
