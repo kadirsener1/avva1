@@ -17,6 +17,8 @@ https://rmtftbjlne.turknet.ercdn.net/bpeytmnqyp/haberturktv/haberturktv_1080p.m3
 
 #EXTINF:-1 tvg-logo="https://vipotv.com/wp-content/uploads/2019/05/24tv.png" group-title="Haber",A Haber
 https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/ahaber/ahaber_1080p.m3u8
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/Bb9HrsDc/Ahaber-Logo.png" group-title="HABER KANALLARI",A HABER 2
+https://trkvz-live.ercdn.net/ahaberhd/ahaberhd.m3u8
 #EXTINF:-1 tvg-logo="https://i.hizliresim.com/qg6q0zx.png" group-title="Haber",Haber Global
 https://tv.ensonhaber.com/haberglobal/haberglobal_720p.m3u8
 
@@ -84,6 +86,21 @@ https://live.artidijitalmedya.com/artidijital_olayturk/olayturk/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://vipotv.com/wp-content/uploads/2019/05/24tv.png" group-title="Haber",Cnbc-e
 https://hnpsechtsc.turknet.ercdn.net/xpnvudnlsv/cnbc-e/cnbc-e_1080p.m3u8
+#EXTINF:-1 tvg-logo="https://www.haberrize.com.tr/uploads/logo-1732632177.png" group-title="HABER KANALLARI",HABER RİZE TV
+https://cdn4.yayin.com.tr/haberrize/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-logo="https://meltemtv.com.tr/uploads/logo.png" group-title="HABER KANALLARI",MELTEM TV
+https://vhxyrsly.rocketcdn.com/meltemtv/chunklist.m3u8
+#EXTINF:-1 tvg-logo="https://api.tv264.gunesozturk.com/Uploads/img/logo/ubp82n3ksdk9n4xlof.jpg" group-title="HABER KANALLARI",TV264
+https://b01c02nl.mediatriple.net/videoonlylive/mtdxkkitgbrckilive/broadcast_5ee244263fd6d.smil/mt_0.m3u8
+#EXTINF:-1 tvg-logo="https://www.kanal3.com.tr/wp-content/uploads/2024/11/logo-12-2-1.png" group-title="HABER KANALLARI",KANAL 3
+https://live.artidijitalmedya.com/artidijital_kanal3/kanal3/chunks.m3u8
+#EXTINF:-1 tvg-logo="https://egemaxtvcom.teimg.com/egemaxtv-com/uploads/2025/11/egemax-orjinal-kopya.png" group-title="HABER KANALLARI",EGEMAX TV
+http://egemaxtv.radyotelekom.com.tr:29010/egemaxtv/egemaxtv/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/289hFJVn/logoooojpg-125025-202304081jpg-015714-20230417-removebg-preview.png" group-title="HABER KANALLARI",KOZA TV
+http://176.65.153.26:6005/play/a01s/index.m3u8
+#EXTINF:-1 tvg-logo="https://karasu.tv/wp-content/uploads/2023/09/cropped-haber-karasu.png" group-title="HABER KANALLARI",KARASU TV
+https://ip100.radyotelekomtv.com:3579/stream/play.m3u8
 
 #EXTINF:-1 tvg-logo="https://vipotv.com/wp-content/uploads/2019/05/24tv.png" group-title="Haber",Bloomberg HT
 https://ciner.daioncdn.net/bloomberght/bloomberght.m3u8
