@@ -23,6 +23,8 @@ https://live.artidijitalmedya.com/artidijital_ciftcitv/ciftcitv/playlist.m3u8
 https://streams.uzunmuhalefet.com/stream/610b517c-1882-4c9e-a1e5-4272601eefd2.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",KÖY TV
 https://streams.uzunmuhalefet.com/stream/7a1294e7-9fa8-4c3d-89b8-eb67e33bc2e6.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",TARIM TV
+https://livetv.work/play/tr/tarimtv.php
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",TOPRAK TV
 https://streams.uzunmuhalefet.com/stream/54fd8806-0142-4839-930e-aa1d662ad866.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",LOVE NATURE EN
