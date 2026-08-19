@@ -12,6 +12,8 @@ http://vipru.linetv.net:8004/stream/YWxhZHlufHxSMkZpY25sek1qQXhNQT09/6973/index.
 https://tv-trtbelgesel.medya.trt.com.tr/master_1080.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",VİASAT HİSTORY
 https://nord.ayakkabiparti.lol/viasathistory/index.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",TARİH TV
+https://nord.ayakkabiparti.lol/tarihtv/index.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",BBC EARTH
 https://nord.ayakkabiparti.lol/bbc/index.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",BEIN İZ
