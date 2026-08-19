@@ -20,6 +20,8 @@ http://65.108.239.207:80/cartoonnetwork/index.m3u8
 #EXTINF:-1 tvg-name="Zarok TV" tvg-id="" tvg-logo="https://play-lh.googleusercontent.com/vOMV90y25YDRtvUVCbkoAvQ_5rGZsMAxQkegh-R5xQdUi0g-YRcuQno1yuw3v-CB1A=w240-h480-rw" group-title="Çocuk",Zarok TV
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
 https://zindikirmancki.zaroktv.com.tr/hls/stream.m3u8
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Çocuk",MAX ANİMASYON
+https://nord.ayakkabiparti.lol/bsfamily/index.m3u8
 #EXTINF:-1 tvg-id="137" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20210421003212.png" group-title="Çocuk",ÇİZGİ FİLM TV
 https://playlist.fasttvcdn.com/pl/rfrk9821hdy9dayo8wfyha/cizgi-film-tv/playlist.m3u8
 #EXTINF:-1 tvg-id="137" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20210421003212.png" group-title="Çocuk",ÇOCUK TV
