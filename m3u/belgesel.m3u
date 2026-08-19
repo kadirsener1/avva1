@@ -7,22 +7,18 @@ https://nord.ayakkabiparti.lol/natgeowild/index.m3u8
 https://nord.ayakkabiparti.lol/discovery/index.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",DISCOVERY-ip
 https://65.108.239.207/discovery/index.m3u8
-
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",ID-N
 https://nord.ayakkabiparti.lol/discs/index.m3u8
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",TRT BELGESEL
-https://tv-trtbelgesel.medya.trt.com.tr/master_1080.m3u8
+
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",VİASAT HİSTORY
 https://nord.ayakkabiparti.lol/viasathistory/index.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",TARİH TV
 https://nord.ayakkabiparti.lol/tarihtv/index.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",BBC EARTH
 https://nord.ayakkabiparti.lol/bbc/index.m3u8
-#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",BEIN İZ
-http://vipru.linetv.net:8004/stream/YWxhZHlufHxSMkZpY25sek1qQXhNQT09/6959/index.m3u8
-#EXTINF:-1 tvg-logo="https://i.postimg.cc/Wb61NL6k/tarihtv-beyaz.png" group-title="BELGELSEL KANALLARI",TARİH TV
-https://vavoo.biz-az.workers.dev/play/385695705243789b6f2c45.m3u8
-#EXTINF:-1 tvg-logo="https://i.postimg.cc/xTTxc9G3/Bein-gurme-removebg-preview.png" group-title="BELGELSEL KANALLARI",beIN GURME
+#EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",TRT BELGESEL
+https://tv-trtbelgesel.medya.trt.com.tr/master_1080.m3u8
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/xTTxc9G3/Bein-gurme-removebg-preview.png" group-title="Belgesel",beIN GURME
 https://vavoo.biz-az.workers.dev/play/9503946568377e1ba14c8.m3u8
 
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",ÇİFTÇİ TV
@@ -35,11 +31,11 @@ https://streams.uzunmuhalefet.com/stream/7a1294e7-9fa8-4c3d-89b8-eb67e33bc2e6.m3
 https://livetv.work/play/tr/tarimtv.php
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",TOPRAK TV
 https://streams.uzunmuhalefet.com/stream/54fd8806-0142-4839-930e-aa1d662ad866.m3u8
-#EXTINF:-1 tvg-logo="https://agrotvcomtr.teimg.com/agrotv-com-tr/uploads/2024/09/100x400-1.png" group-title="BELGELSEL KANALLARI",AGRO TV
+#EXTINF:-1 tvg-logo="https://agrotvcomtr.teimg.com/agrotv-com-tr/uploads/2024/09/100x400-1.png" group-title="Belgesel",AGRO TV
 https://agro.fatihdemirsoy.com:8181/memfs/efe70a0b-aea8-48f3-bfda-72fff7f48a7b_output_0.m3u8?session=WiBL6q6PzoRV7DTJZaMvmo
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",LOVE NATURE EN
 https://aegis-cloudfront-1.tubi.video/6d6d0f24-8445-4b4c-bdf6-44f9e38beaa4/playlist.m3u8
-#EXTINF:-1 tvg-logo="https://i.postimg.cc/MprdLBHt/15366-removebg-preview.png" group-title="BELGELSEL KANALLARI",CİNE7 SAFARİ
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/MprdLBHt/15366-removebg-preview.png" group-title="Belgesel",CİNE7 SAFARİ
 http://162.212.179.32/akamaissh101/ssh101/cine7__safari/chunks.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",Nature Time FR
 https://bamusa-naturetime-emea-fra-rakuten.amagi.tv/playlist1080_pl.m3u8
@@ -47,6 +43,5 @@ https://bamusa-naturetime-emea-fra-rakuten.amagi.tv/playlist1080_pl.m3u8
 https://travelxp-travelxp-1-nz.samsung.wurl.tv/playlist.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",BELGESEL TV
 https://playlist.fasttvcdn.com/pl/rfrk9821hdy9dayo8wfyha/belgesel-tv/playlist.m3u8
-
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Belgesel",Fanatik Prime Ed Stafford
 https://raw.githubusercontent.com/kadirsener1/catcast/refs/heads/main/catcast/fanatikprimeEdStafford.m3u8
