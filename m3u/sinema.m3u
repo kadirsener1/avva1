@@ -98,7 +98,22 @@ https://edge-e3.evrideo.tv/f2dcbecf-5af0-47db-a82e-032112050a23_1000027346_HLS/m
 http://65.108.239.207/sinemayerli/index.m3u8
 #EXTINF:-1 tvg-logo="https://raw.githubusercontent.com/kadirsener1/tvmyeni/refs/heads/main/bg.JPG" group-title="Sinema",İNOBOX SİNEMA
 http://65.108.239.207/sinemayerli2/index.m3u8
-
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/7PFn2g5q/38943114-ico.png" group-title="SİNEMA/DİZİ KANALLARI",MAX SİNEMA
+http://162.212.179.32/akamaissh101/ssh101/planettv/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/pLZf44qp/39030030-ico.png" group-title="SİNEMA/DİZİ KANALLARI",MAX PREMİUM
+http://162.212.179.32/akamaissh101/ssh101/premium/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/FR2304sL/39030647-ico.png" group-title="SİNEMA/DİZİ KANALLARI",MAX STAR
+http://162.212.179.32/akamaissh101/ssh101/inbox1/playlist.m3u8
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/59Cd5mGN/viasat-epic-drama.png" group-title="SİNEMA/DİZİ KANALLARI",VİASAT EPİC DRAMA
+http://mag.tivi-one-iptv.net:80/play/live.php?mac=00:1A:79:C0:8F:65&stream=1471701&extension=ts&play_token=POSWGUQYoB
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/rsLhJLmh/15362-removebg-preview.png" group-title="SİNEMA/DİZİ KANALLARI",CİNE7 PLUS
+http://162.212.179.32/akamaissh101/ssh101/cine7__plus/chunks.m3u8
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/jjFmy9yD/15354-removebg-preview.png" group-title="SİNEMA/DİZİ KANALLARI",CİNE7 TÜRK
+http://162.212.179.32/akamaissh101/ssh101/cine7__türk/chunks.m3u8
+#EXTINF:-1 tvg-logo="https://r.resimlink.com/ZQbjzt.gif" group-title="SİNEMA/DİZİ KANALLARI",CİNE7 DİZİ
+http://162.212.179.32/akamaissh101/ssh101/cine7__dizi/chunks.m3u8
+#EXTINF:-1 tvg-logo="https://i.postimg.cc/rwM3jDB6/akkaontvust.png" group-title="SİNEMA/DİZİ KANALLARI",AKKON TV
+https://ip.akkontv.com:3205/stream/play.m3u8
 #EXTINF:-1 tvg-logo="https://www.shutterstock.com/image-vector/movie-time-600nw-324455369.jpg" group-title="Sinema",PLAYSINEMA
 https://ip100.radyotelekomtv.com:3784/stream/play.m3u8
 #EXTINF:-1 tvg-logo="https://www.shutterstock.com/image-vector/movie-time-600nw-324455369.jpg" group-title="Sinema",SDMSINEMA
@@ -136,12 +151,7 @@ https://raw.githubusercontent.com/Elvin4K/restream/refs/heads/pro4k/1siriustv.m3
 https://canliyayin.cine1.com.tr/memfs/cbaef080-a742-4644-9e9e-2b9f6a5103c3_output_0.m3u8
 #EXTINF:-1 tvg-logo="https://www.cine5tv.com/wp-content/uploads/2025/10/cinelogo.png" group-title="SİNEMA/DİZİ KANALLARI",CİNE5 TV
 https://host.onlineradyotv.net:8081/cine5tv/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-logo="https://i.postimg.cc/rsLhJLmh/15362-removebg-preview.png" group-title="SİNEMA/DİZİ KANALLARI",CİNE7 PLUS
-http://162.212.179.32/akamaissh101/ssh101/cine7__plus/chunks.m3u8
-#EXTINF:-1 tvg-logo="https://i.postimg.cc/jjFmy9yD/15354-removebg-preview.png" group-title="SİNEMA/DİZİ KANALLARI",CİNE7 TÜRK
-http://162.212.179.32/akamaissh101/ssh101/cine7__türk/chunks.m3u8
-#EXTINF:-1 tvg-logo="https://r.resimlink.com/ZQbjzt.gif" group-title="SİNEMA/DİZİ KANALLARI",CİNE7 DİZİ
-http://162.212.179.32/akamaissh101/ssh101/cine7__dizi/chunks.m3u8
+
 #EXTINF:-1 tvg-logo="https://i.postimg.cc/d0YrbxXS/12029-removebg-preview.png" group-title="SİNEMA/DİZİ KANALLARI",TELEZEN
 https://raw.githubusercontent.com/ibrahim9071/kick/refs/heads/main/streams/telezentvchannel.m3u8
 #EXTINF:-1 tvg-logo="https://i.postimg.cc/Hs0yycYP/38956066-ico.png" group-title="SİNEMA/DİZİ KANALLARI",EM TV
