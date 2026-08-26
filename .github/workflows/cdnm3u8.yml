@@ -1,0 +1,68 @@
+name: CDN Live TV M3U8 lerini Güncelle
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */3 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Python kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Python paketleri yükle
+        run: |
+          pip install --upgrade pip
+          pip install requests urllib3 playwright
+
+      - name: Playwright Chromium kur
+        run: |
+          python -m playwright install chromium --with-deps
+
+      - name: M3U ve Kanal Dosyalarını Oluştur
+        env:
+          DISPLAY: ""
+          LIBGL_ALWAYS_SOFTWARE: "1"
+          GALLIUM_DRIVER: "softpipe"
+        run: |
+          python checker.py
+
+      - name: Klasör ve Dosyaları Artifact Olarak Yükle
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cdnlive-klasor-ve-debug
+          path: |
+            cdnlive/
+            debug_failed.json
+          if-no-files-found: ignore
+
+      - name: Commit ve push (Klasör Dahil)
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # ✅ Eski m3u dosyasını temizle (varsa) ve yeni cdnlive klasörünü git'e ekle
+          git rm -f cdnlive.m3u || true
+          git add cdnlive/ debug_failed.json || true
+
+          if git diff --cached --quiet; then
+            echo "ℹ️ Değişiklik yok."
+          else
+            # ✅ cdnlive klasöründeki toplam .m3u8 dosya sayısını hesapla
+            KANAL=$(find cdnlive -type f -name "*.m3u8" | wc -l || echo 0)
+            TARIH=$(TZ='Europe/Istanbul' date '+%d.%m.%Y %H:%M')
+            git commit -m "📺 $KANAL kanal dosyası — $TARIH"
+            git push
+          fi
