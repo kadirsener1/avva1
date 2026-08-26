@@ -13,7 +13,6 @@ SOURCE_URLS = [
 
    "https://raw.githubusercontent.com/kadirsener1/247/refs/heads/main/tv247tr.m3u",
    "https://raw.githubusercontent.com/kadirsener1/atom/refs/heads/main/atom.m3u",
-   "https://raw.githubusercontent.com/kadirsener1/247/refs/heads/main/tv247.m3u",
     "m3u/ulusal.m3u",
     "m3u/haber.m3u",
     "m3u/trspor.m3u",
@@ -23,6 +22,8 @@ SOURCE_URLS = [
     "YouTube/playlist.m3u",
     "m3u/müzik.m3u",
    "m3u/radyo.m3u",
+   "m3u/cdnlive.m3u",
+    "https://raw.githubusercontent.com/kadirsener1/247/refs/heads/main/tv247.m3u",
 
 ]
 
