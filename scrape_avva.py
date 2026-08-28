@@ -24,7 +24,7 @@ SOURCE_URLS = [
    "m3u/radyo.m3u",
    "m3u/cdnlive.m3u",
     "https://raw.githubusercontent.com/kadirsener1/247/refs/heads/main/tv247.m3u",
-
+"https://raw.githubusercontent.com/kadirsener1/247/refs/heads/main/cdn.m3u",
 ]
 
 # Avva API
