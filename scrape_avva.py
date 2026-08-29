@@ -23,6 +23,7 @@ SOURCE_URLS = [
     "m3u/müzik.m3u",
    "m3u/radyo.m3u",
    "m3u/cdnlive.m3u",
+   "https://raw.githubusercontent.com/kadirsener1/mahsun/refs/heads/main/mahsun.m3u",
     "https://raw.githubusercontent.com/kadirsener1/247/refs/heads/main/tv247.m3u",
 "https://raw.githubusercontent.com/kadirsener1/247/refs/heads/main/cdn.m3u",
 ]
