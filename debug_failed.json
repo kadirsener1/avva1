@@ -161,15 +161,15 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "aufoxleague",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Fox%20League&code=au&user=cdnlivetv&plan=free",
+    "name": "aufoxfooty",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Fox%20Footy&code=au&user=cdnlivetv&plan=free",
     "image": "",
     "group": "AU",
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "aufoxfooty",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Fox%20Footy&code=au&user=cdnlivetv&plan=free",
+    "name": "aufoxleague",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Fox%20League&code=au&user=cdnlivetv&plan=free",
     "image": "",
     "group": "AU",
     "reason": "Geçerli stream URL bulunamadı"
