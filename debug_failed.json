@@ -42,15 +42,15 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "esdazn2",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=DAZN%202%20ES&code=es&user=cdnlivetv&plan=free",
+    "name": "esdazn1",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=DAZN%201%20ES&code=es&user=cdnlivetv&plan=free",
     "image": "",
     "group": "ES",
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "esdazn1",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=DAZN%201%20ES&code=es&user=cdnlivetv&plan=free",
+    "name": "esdazn2",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=DAZN%202%20ES&code=es&user=cdnlivetv&plan=free",
     "image": "",
     "group": "ES",
     "reason": "Geçerli stream URL bulunamadı"
