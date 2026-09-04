@@ -12,14 +12,6 @@ from datetime import datetime
 SOURCE_URLS = [
 
    "https://raw.githubusercontent.com/kadirsener1/atom/refs/heads/main/atom.m3u",
-    "m3u/ulusal.m3u",
-    "m3u/haber.m3u",
-    "m3u/trspor.m3u",
-    "m3u/sinema.m3u",
-   "m3u/belgesel.m3u",
-    "m3u/cocuk.m3u",
-    "YouTube/playlist.m3u",
-    "m3u/müzik.m3u",
    "m3u/radyo.m3u",
    "https://raw.githubusercontent.com/kadirsener1/mahsun/refs/heads/main/mahsun.m3u",
    
