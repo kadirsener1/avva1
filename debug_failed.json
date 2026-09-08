@@ -28,15 +28,15 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "freurosport1",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Eurosport%201%20FR&code=fr&user=cdnlivetv&plan=free",
+    "name": "freurosport2",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Eurosport%202%20FR&code=fr&user=cdnlivetv&plan=free",
     "image": "",
     "group": "FR",
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "freurosport2",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Eurosport%202%20FR&code=fr&user=cdnlivetv&plan=free",
+    "name": "freurosport1",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Eurosport%201%20FR&code=fr&user=cdnlivetv&plan=free",
     "image": "",
     "group": "FR",
     "reason": "Geçerli stream URL bulunamadı"
