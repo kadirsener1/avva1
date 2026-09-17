@@ -28,15 +28,15 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "freurosport2",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Eurosport%202%20FR&code=fr&user=cdnlivetv&plan=free",
+    "name": "freurosport1",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Eurosport%201%20FR&code=fr&user=cdnlivetv&plan=free",
     "image": "",
     "group": "FR",
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "freurosport1",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Eurosport%201%20FR&code=fr&user=cdnlivetv&plan=free",
+    "name": "freurosport2",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Eurosport%202%20FR&code=fr&user=cdnlivetv&plan=free",
     "image": "",
     "group": "FR",
     "reason": "Geçerli stream URL bulunamadı"
@@ -56,8 +56,8 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "deskysportf1",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sport%20F1%20DE&code=de&user=cdnlivetv&plan=free",
+    "name": "dedazn2",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=DAZN%202%20DE&code=de&user=cdnlivetv&plan=free",
     "image": "",
     "group": "DE",
     "reason": "Geçerli stream URL bulunamadı"
@@ -70,8 +70,8 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "dedazn2",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=DAZN%202%20DE&code=de&user=cdnlivetv&plan=free",
+    "name": "deskysportf1",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sport%20F1%20DE&code=de&user=cdnlivetv&plan=free",
     "image": "",
     "group": "DE",
     "reason": "Geçerli stream URL bulunamadı"
@@ -79,6 +79,13 @@
   {
     "name": "itskysportuno",
     "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sport%20Uno&code=it&user=cdnlivetv&plan=free",
+    "image": "",
+    "group": "IT",
+    "reason": "Geçerli stream URL bulunamadı"
+  },
+  {
+    "name": "itskysportf1",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sport%20F1%20IT&code=it&user=cdnlivetv&plan=free",
     "image": "",
     "group": "IT",
     "reason": "Geçerli stream URL bulunamadı"
@@ -93,13 +100,6 @@
   {
     "name": "itskysportfootball",
     "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sport%20Football&code=it&user=cdnlivetv&plan=free",
-    "image": "",
-    "group": "IT",
-    "reason": "Geçerli stream URL bulunamadı"
-  },
-  {
-    "name": "itskysportf1",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sport%20F1%20IT&code=it&user=cdnlivetv&plan=free",
     "image": "",
     "group": "IT",
     "reason": "Geçerli stream URL bulunamadı"
