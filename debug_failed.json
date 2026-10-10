@@ -84,15 +84,15 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "itskysportf1",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sport%20F1%20IT&code=it&user=cdnlivetv&plan=free",
+    "name": "itskysportcalcio",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sport%20Calcio&code=it&user=cdnlivetv&plan=free",
     "image": "",
     "group": "IT",
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "itskysportcalcio",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sport%20Calcio&code=it&user=cdnlivetv&plan=free",
+    "name": "itskysportf1",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sport%20F1%20IT&code=it&user=cdnlivetv&plan=free",
     "image": "",
     "group": "IT",
     "reason": "Geçerli stream URL bulunamadı"
