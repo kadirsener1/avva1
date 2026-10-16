@@ -1,12 +1,5 @@
 [
   {
-    "name": "uktntsports3",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=TNT%20Sports%203&code=gb&user=cdnlivetv&plan=free",
-    "image": "",
-    "group": "UK",
-    "reason": "Geçerli stream URL bulunamadı"
-  },
-  {
     "name": "uktntsports1",
     "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=TNT%20Sports%201&code=gb&user=cdnlivetv&plan=free",
     "image": "",
@@ -14,8 +7,8 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "uktntsports4",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=TNT%20Sports%204&code=gb&user=cdnlivetv&plan=free",
+    "name": "uktntsports3",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=TNT%20Sports%203&code=gb&user=cdnlivetv&plan=free",
     "image": "",
     "group": "UK",
     "reason": "Geçerli stream URL bulunamadı"
@@ -23,6 +16,13 @@
   {
     "name": "uktntsports2",
     "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=TNT%20Sports%202&code=gb&user=cdnlivetv&plan=free",
+    "image": "",
+    "group": "UK",
+    "reason": "Geçerli stream URL bulunamadı"
+  },
+  {
+    "name": "uktntsports4",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=TNT%20Sports%204&code=gb&user=cdnlivetv&plan=free",
     "image": "",
     "group": "UK",
     "reason": "Geçerli stream URL bulunamadı"
@@ -91,15 +91,15 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "ukskysportstennis",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sports%20Tennis&code=gb&user=cdnlivetv&plan=free",
+    "name": "ukskysportsmix",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sports%20Mix&code=gb&user=cdnlivetv&plan=free",
     "image": "",
     "group": "UK",
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "ukskysportsmix",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sports%20Mix&code=gb&user=cdnlivetv&plan=free",
+    "name": "ukskysportstennis",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sports%20Tennis&code=gb&user=cdnlivetv&plan=free",
     "image": "",
     "group": "UK",
     "reason": "Geçerli stream URL bulunamadı"
@@ -147,15 +147,15 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "ukbbcone",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=BBC%20One&code=gb&user=cdnlivetv&plan=free",
+    "name": "ukbbctwo",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=BBC%20Two&code=gb&user=cdnlivetv&plan=free",
     "image": "",
     "group": "UK",
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "ukbbctwo",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=BBC%20Two&code=gb&user=cdnlivetv&plan=free",
+    "name": "ukbbcone",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=BBC%20One&code=gb&user=cdnlivetv&plan=free",
     "image": "",
     "group": "UK",
     "reason": "Geçerli stream URL bulunamadı"
@@ -175,17 +175,17 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "ukchannel5",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Channel%205&code=gb&user=cdnlivetv&plan=free",
-    "image": "",
-    "group": "UK",
-    "reason": "Geçerli stream URL bulunamadı"
-  },
-  {
     "name": "trbeinsports1",
     "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20Sports%201&code=tr&user=cdnlivetv&plan=free",
     "image": "",
     "group": "TR",
+    "reason": "Geçerli stream URL bulunamadı"
+  },
+  {
+    "name": "ukchannel5",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Channel%205&code=gb&user=cdnlivetv&plan=free",
+    "image": "",
+    "group": "UK",
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
@@ -203,15 +203,15 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "trbeinsports4",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20Sports%204&code=tr&user=cdnlivetv&plan=free",
+    "name": "trbeinsports5",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20Sports%205&code=tr&user=cdnlivetv&plan=free",
     "image": "",
     "group": "TR",
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "trbeinsports5",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20Sports%205&code=tr&user=cdnlivetv&plan=free",
+    "name": "trbeinsports4",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20Sports%204&code=tr&user=cdnlivetv&plan=free",
     "image": "",
     "group": "TR",
     "reason": "Geçerli stream URL bulunamadı"
