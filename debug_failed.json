@@ -7,15 +7,15 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "usespnu",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=ESPNU&code=us&user=cdnlivetv&plan=free",
+    "name": "usespnews",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=ESPNews&code=us&user=cdnlivetv&plan=free",
     "image": "",
     "group": "US",
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "usespnews",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=ESPNews&code=us&user=cdnlivetv&plan=free",
+    "name": "usespnu",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=ESPNU&code=us&user=cdnlivetv&plan=free",
     "image": "",
     "group": "US",
     "reason": "Geçerli stream URL bulunamadı"
@@ -42,15 +42,15 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "esdazn2",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=DAZN%202%20ES&code=es&user=cdnlivetv&plan=free",
+    "name": "esdazn1",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=DAZN%201%20ES&code=es&user=cdnlivetv&plan=free",
     "image": "",
     "group": "ES",
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "esdazn1",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=DAZN%201%20ES&code=es&user=cdnlivetv&plan=free",
+    "name": "esdazn2",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=DAZN%202%20ES&code=es&user=cdnlivetv&plan=free",
     "image": "",
     "group": "ES",
     "reason": "Geçerli stream URL bulunamadı"
