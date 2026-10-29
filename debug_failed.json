@@ -70,13 +70,6 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "dedazn1",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=DAZN%201%20DE&code=de&user=cdnlivetv&plan=free",
-    "image": "",
-    "group": "DE",
-    "reason": "Geçerli stream URL bulunamadı"
-  },
-  {
     "name": "dedazn2",
     "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=DAZN%202%20DE&code=de&user=cdnlivetv&plan=free",
     "image": "",
@@ -84,15 +77,15 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "itskysportuno",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sport%20Uno&code=it&user=cdnlivetv&plan=free",
+    "name": "dedazn1",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=DAZN%201%20DE&code=de&user=cdnlivetv&plan=free",
     "image": "",
-    "group": "IT",
+    "group": "DE",
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "itskysportfootball",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sport%20Football&code=it&user=cdnlivetv&plan=free",
+    "name": "itskysportuno",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sport%20Uno&code=it&user=cdnlivetv&plan=free",
     "image": "",
     "group": "IT",
     "reason": "Geçerli stream URL bulunamadı"
@@ -107,6 +100,13 @@
   {
     "name": "itskysportf1",
     "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sport%20F1%20IT&code=it&user=cdnlivetv&plan=free",
+    "image": "",
+    "group": "IT",
+    "reason": "Geçerli stream URL bulunamadı"
+  },
+  {
+    "name": "itskysportfootball",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sport%20Football&code=it&user=cdnlivetv&plan=free",
     "image": "",
     "group": "IT",
     "reason": "Geçerli stream URL bulunamadı"
@@ -189,6 +189,13 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
+    "name": "arbeinsports2premium",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20Sports%202%20Premium&code=ar&user=cdnlivetv&plan=free",
+    "image": "",
+    "group": "AR",
+    "reason": "Geçerli stream URL bulunamadı"
+  },
+  {
     "name": "arbeinsports1premium",
     "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20Sports%201%20Premium&code=ar&user=cdnlivetv&plan=free",
     "image": "",
@@ -198,13 +205,6 @@
   {
     "name": "arbeinsports3premium",
     "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20Sports%203%20Premium&code=ar&user=cdnlivetv&plan=free",
-    "image": "",
-    "group": "AR",
-    "reason": "Geçerli stream URL bulunamadı"
-  },
-  {
-    "name": "arbeinsports2premium",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20Sports%202%20Premium&code=ar&user=cdnlivetv&plan=free",
     "image": "",
     "group": "AR",
     "reason": "Geçerli stream URL bulunamadı"
@@ -252,15 +252,15 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "aralkass1",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Alkass%201&code=ar&user=cdnlivetv&plan=free",
+    "name": "arsscextra1",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=SSC%20Extra%201&code=ar&user=cdnlivetv&plan=free",
     "image": "",
     "group": "AR",
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "arsscextra1",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=SSC%20Extra%201&code=ar&user=cdnlivetv&plan=free",
+    "name": "aralkass1",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Alkass%201&code=ar&user=cdnlivetv&plan=free",
     "image": "",
     "group": "AR",
     "reason": "Geçerli stream URL bulunamadı"
