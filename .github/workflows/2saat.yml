@@ -5,6 +5,9 @@ on:
     - cron: '0 */2 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write  # GitHub Actions'ın repoya dosya yazabilmesi için kritik yetki
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -21,7 +24,15 @@ jobs:
       - name: Bağımlılık Kur
         run: pip install requests
 
-      - name: Linkleri Güncelle
+      - name: Linkleri Güncelle ve M3U Yaz
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: python scrape_avvason.py
+
+      - name: Playlist Dosyasını Git ile Gönder
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add playlist.m3u
+          # Eğer değişiklik varsa commit et ve gönder, yoksa pas geç
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Otomatik playlist.m3u güncellemesi: $(date +'%Y-%m-%d %H:%M:%S')" && git push)
