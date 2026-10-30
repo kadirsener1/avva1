@@ -6,18 +6,18 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write  # M3U dosyasını repoya yazabilmek için yetki
+  contents: write
 
 jobs:
   update:
-    runs-on: ubuntu-24.04  # Ubuntu sürüm uyarısını engellemek için sabit sürüme geçtik
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5  # Güncel checkout adımı
+        uses: actions/checkout@v5
 
       - name: Python Kur
-        uses: actions/setup-python@v6  # Güncel setup-python adımı
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -35,3 +35,21 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add playlist.m3u
           git diff --quiet && git diff --staged --quiet || (git commit -m "Otomatik playlist.m3u güncellemesi: $(date +'%Y-%m-%d %H:%M:%S')" && git push)
+
+      # --- EKLENEN BİLGİLENDİRME VE ÖZET ADIMI ---
+      - name: İşlem Özetini Oluştur ve Bilgilendir
+        if: always() # İşlem başarsa da başarısız olsa da bilgilendirmeyi basar
+        run: |
+          echo "## 📊 Avva Sports Link Güncelleme Raporu" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Çalışma Zamanı:** $(date +'%Y-%m-%d %H:%M:%S') (UTC)" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f playlist.m3u ]; then
+            SATIR_SAYISI=$(wc -l < playlist.m3u)
+            DOSYA_BOYUTU=$(du -h playlist.m3u | cut -f1)
+            echo " - **Durum:** ✅ \`playlist.m3u\` başarıyla kontrol edildi/güncellendi." >> $GITHUB_STEP_SUMMARY
+            echo " - **Dosya Boyutu:** $DOSYA_BOYUTU" >> $GITHUB_STEP_SUMMARY
+            echo " - **Toplam Satır Sayısı:** $SATIR_SAYISI" >> $GITHUB_STEP_SUMMARY
+          else
+            echo " - **Durum:** ❌ \`playlist.m3u\` dosyası bulunamadı!" >> $GITHUB_STEP_SUMMARY
+          fi
