@@ -24,4 +24,4 @@ jobs:
       - name: Linkleri Güncelle
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: python scrape_avva.py
+        run: python scrape_avvason.py
