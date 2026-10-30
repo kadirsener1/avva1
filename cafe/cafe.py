@@ -7,7 +7,7 @@ def find_working_sporcafe(start=5, end=100):
     headers = {"User-Agent": "Mozilla/5.0"}
 
     for i in range(start, end + 1):
-        url = f"https://www.sporcafe{i}.xyz/"
+        url = f"https://www.sporcafe{i}.top/"
         print(f"🔍 Taranıyor: {url}")
         try:
             response = requests.get(url, headers=headers, timeout=5)
