@@ -28,15 +28,15 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "freurosport2",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Eurosport%202%20FR&code=fr&user=cdnlivetv&plan=free",
+    "name": "freurosport1",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Eurosport%201%20FR&code=fr&user=cdnlivetv&plan=free",
     "image": "",
     "group": "FR",
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "freurosport1",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Eurosport%201%20FR&code=fr&user=cdnlivetv&plan=free",
+    "name": "freurosport2",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Eurosport%202%20FR&code=fr&user=cdnlivetv&plan=free",
     "image": "",
     "group": "FR",
     "reason": "Geçerli stream URL bulunamadı"
@@ -63,15 +63,15 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "deskysportf1",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sport%20F1%20DE&code=de&user=cdnlivetv&plan=free",
+    "name": "dedazn1",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=DAZN%201%20DE&code=de&user=cdnlivetv&plan=free",
     "image": "",
     "group": "DE",
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "dedazn1",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=DAZN%201%20DE&code=de&user=cdnlivetv&plan=free",
+    "name": "deskysportf1",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Sky%20Sport%20F1%20DE&code=de&user=cdnlivetv&plan=free",
     "image": "",
     "group": "DE",
     "reason": "Geçerli stream URL bulunamadı"
@@ -175,15 +175,15 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "aufoxfooty",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Fox%20Footy&code=au&user=cdnlivetv&plan=free",
+    "name": "aufoxcricket",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Fox%20Cricket&code=au&user=cdnlivetv&plan=free",
     "image": "",
     "group": "AU",
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "aufoxcricket",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Fox%20Cricket&code=au&user=cdnlivetv&plan=free",
+    "name": "aufoxfooty",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Fox%20Footy&code=au&user=cdnlivetv&plan=free",
     "image": "",
     "group": "AU",
     "reason": "Geçerli stream URL bulunamadı"
@@ -245,6 +245,13 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
+    "name": "arssc5",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=SSC%205&code=ar&user=cdnlivetv&plan=free",
+    "image": "",
+    "group": "AR",
+    "reason": "Geçerli stream URL bulunamadı"
+  },
+  {
     "name": "arsscextra1",
     "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=SSC%20Extra%201&code=ar&user=cdnlivetv&plan=free",
     "image": "",
@@ -261,13 +268,6 @@
   {
     "name": "aralkass2",
     "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Alkass%202&code=ar&user=cdnlivetv&plan=free",
-    "image": "",
-    "group": "AR",
-    "reason": "Geçerli stream URL bulunamadı"
-  },
-  {
-    "name": "arssc5",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=SSC%205&code=ar&user=cdnlivetv&plan=free",
     "image": "",
     "group": "AR",
     "reason": "Geçerli stream URL bulunamadı"
