@@ -196,15 +196,15 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "arbeinsports2premium",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20Sports%202%20Premium&code=ar&user=cdnlivetv&plan=free",
+    "name": "arbeinsports3premium",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20Sports%203%20Premium&code=ar&user=cdnlivetv&plan=free",
     "image": "",
     "group": "AR",
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "arbeinsports3premium",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20Sports%203%20Premium&code=ar&user=cdnlivetv&plan=free",
+    "name": "arbeinsports2premium",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20Sports%202%20Premium&code=ar&user=cdnlivetv&plan=free",
     "image": "",
     "group": "AR",
     "reason": "Geçerli stream URL bulunamadı"
