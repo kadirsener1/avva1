@@ -1,37 +1,33 @@
-name: Youtube Güncelleyici
+name: Update YouTube Playlist
 
 on:
   schedule:
-    - cron: '0 */4 * * *'
-  workflow_dispatch:
-  push:
-    paths:
-      - 'YouTube/channels.txt'
-
-permissions:
-  contents: write          # Depoya yazma izni
+    - cron: '0 */6 * * *' # Her 6 saatte bir otomatik çalışır
+  workflow_dispatch: # GitHub web sitesinden tek tıkla manuel çalıştırma
 
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
     steps:
-      - name: Depoyu klonla
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Python kurulumu
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.10'
 
-      - name: Bağımlılıkları yükle
-        run: pip install requests
-
-      - name: M3U dosyasını oluştur
-        run: python YouTube/generate_m3u.py
-
-      - name: Değişiklikleri commit et
+      - name: Install dependencies
         run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
+          pip install --upgrade pip
+          pip install yt-dlp requests
+
+      - name: Run generate_m3u.py
+        run: python generate_m3u.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add YouTube/playlist.m3u
-          git diff --staged --quiet || (git commit -m "📡 M3U güncellendi" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update playlist.m3u" && git push)
