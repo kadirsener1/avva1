@@ -11,7 +11,7 @@ except FileNotFoundError:
 
 def extract_video_id(url_or_id):
     url_or_id = url_or_id.strip()
-    if 'youtu.be/' in url_or_id or 'youtube.com' in url_or_id or 'm.youtube.com' in url_or_id:
+    if 'youtu.be/' in url_or_id or 'youtube.com' in url_or_id or 'm.youtube.com' in url_or_id or 'youtube-nocookie.com' in url_or_id:
         return url_or_id, "url"
     if re.match(r'^[a-zA-Z0-9_-]{11}$', url_or_id):
         return f"https://www.youtube.com/watch?v={url_or_id}", "url"
@@ -26,6 +26,12 @@ def get_video_and_stream_info(target_url):
         'skip_download': True,
         'quiet': True,
         'no_warnings': True,
+        # YouTube bot korumasını bypass etmek için ek ayarlar
+        'extractor_args': {
+            'youtube': {
+                'player_client': ['android', 'web']
+            }
+        }
     }
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
