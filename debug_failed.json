@@ -35,17 +35,17 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "freurosport2",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Eurosport%202%20FR&code=fr&user=cdnlivetv&plan=free",
-    "image": "",
-    "group": "FR",
-    "reason": "Geçerli stream URL bulunamadı"
-  },
-  {
     "name": "esdaznlaliga",
     "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=DAZN%20LaLiga&code=es&user=cdnlivetv&plan=free",
     "image": "",
     "group": "ES",
+    "reason": "Geçerli stream URL bulunamadı"
+  },
+  {
+    "name": "freurosport2",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=Eurosport%202%20FR&code=fr&user=cdnlivetv&plan=free",
+    "image": "",
+    "group": "FR",
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
@@ -189,15 +189,15 @@
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "arbeinsports2premium",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20Sports%202%20Premium&code=ar&user=cdnlivetv&plan=free",
+    "name": "arbeinsports1premium",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20Sports%201%20Premium&code=ar&user=cdnlivetv&plan=free",
     "image": "",
     "group": "AR",
     "reason": "Geçerli stream URL bulunamadı"
   },
   {
-    "name": "arbeinsports1premium",
-    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20Sports%201%20Premium&code=ar&user=cdnlivetv&plan=free",
+    "name": "arbeinsports2premium",
+    "player_url": "https://cdnlivetv.tv/api/v1/channels/player/?name=beIN%20Sports%202%20Premium&code=ar&user=cdnlivetv&plan=free",
     "image": "",
     "group": "AR",
     "reason": "Geçerli stream URL bulunamadı"
